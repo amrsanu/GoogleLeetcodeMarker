@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LeetCode Dashboard - All Notes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: 'Inter', Arial, sans-serif; background: #f6f8fa; color: #222; margin: 0; }
+    .container { max-width: 800px; margin: 40px auto; padding: 28px 20px 32px 20px; background: #fff; border-radius: 16px; box-shadow: 0 4px 24px #0002; }
+    h1 { font-size: 2.2rem; margin-bottom: 0.5em; letter-spacing: -1px; }
+    .back-btn { background: #eaf6ff; border: 1px solid #b3e0ff; color: #0074d9; border-radius: 7px; padding: 6px 14px; cursor: pointer; font-weight: 500; margin-bottom: 1.5em; }
+    .back-btn:hover { background: #d0ecff; }
+    .all-notes-list { }
+    .all-notes-item { margin-bottom: 2em; padding-bottom: 1em; border-bottom: 1px solid #eee; }
+    .all-notes-item:last-child { border-bottom: none; }
+    .question-link { color: #0074d9; text-decoration: none; font-size: 1.08em; font-weight: 500; }
+    .question-link:hover { text-decoration: underline; }
+    .difficulty { font-size: 0.93em; padding: 2px 10px; border-radius: 7px; margin-left: 10px; }
+    .difficulty.Easy { background: #e6f9e6; color: #2e8b57; }
+    .difficulty.Med { background: #fffbe6; color: #b8860b; }
+    .difficulty.Medium { background: #fffbe6; color: #b8860b; }
+    .difficulty.Hard { background: #ffe6e6; color: #b22222; }
+    .note-content { margin-top: 8px; white-space: pre-line; color: #444; font-size: 1.05em; }
+    .empty-msg { text-align: center; color: #aaa; margin: 2em 0; font-size: 1.1em; }
+    @media (max-width: 600px) {
+      .container { padding: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button class="back-btn" onclick="window.location.href='dashboard.html'">&larr; Back to Dashboard</button>
+    <h1>All Notes</h1>
+    <div class="all-notes-list" id="allNotesList"></div>
+    <div id="emptyMsg" class="empty-msg" style="display:none;">No notes added yet.</div>
+  </div>
+  <script>
+    let questions = [];
+    function loadQuestions() {
+      fetch('leetcode_questions.json')
+        .then(res => {
+          if (!res.ok) throw new Error('Network response was not ok');
+          return res.json();
+        })
+        .then(data => {
+          questions = data;
+          loadState();
+          renderNotes();
+        })
+        .catch(() => {
+          document.getElementById('allNotesList').innerHTML = '';
+          document.getElementById('emptyMsg').style.display = 'block';
+          document.getElementById('emptyMsg').textContent =
+            "Could not load leetcode_questions.json. Please use a local web server (e.g., 'npx serve .') to view this page.";
+        });
+    }
+    function loadState() {
+      const notes = JSON.parse(localStorage.getItem('questionNotes') || '{}');
+      questions.forEach(q => {
+        q.note = notes[q.link] || '';
+      });
+    }
+    function renderNotes() {
+      const notesList = document.getElementById('allNotesList');
+      notesList.innerHTML = '';
+      const notes = questions.filter(q => q.note);
+      notes.forEach(q => {
+        const div = document.createElement('div');
+        div.className = 'all-notes-item';
+        div.innerHTML = `
+          <a href="${q.link}" target="_blank" class="question-link">${q.title}</a>
+          <span class="difficulty ${q.difficulty.replace('.', '')}">${q.difficulty}</span>
+          <div class="note-content">${q.note}</div>
+        `;
+        notesList.appendChild(div);
+      });
+      document.getElementById('emptyMsg').style.display = notes.length === 0 ? 'block' : 'none';
+    }
+    loadQuestions();
+  </script>
+</body>
+</html>

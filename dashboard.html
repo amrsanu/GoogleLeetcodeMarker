@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LeetCode Minimalist Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: 'Inter', Arial, sans-serif; background: #f6f8fa; color: #222; margin: 0; }
+    .container { width: 90%; max-width: 900px; margin: 40px auto; padding: 28px 20px 32px 20px; background: #fff; border-radius: 16px; box-shadow: 0 4px 24px #0002; }
+    h1 { font-size: 2.2rem; margin-bottom: 0.5em; letter-spacing: -1px; }
+    .top-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1em; margin-bottom: 1.5em; }
+    .filters { display: flex; gap: 1em; align-items: center; }
+    .filters select, .filters button { font-size: 1em; padding: 6px 14px; border-radius: 7px; border: 1px solid #ddd; background: #f7f7fa; color: #222; }
+    .filters button { background: #f2f2f2; border: 1px solid #ccc; cursor: pointer; transition: background 0.2s; }
+    .filters button:hover { background: #e6e6e6; }
+    .show-notes-btn { background: #eaf6ff; border: 1px solid #b3e0ff; color: #0074d9; border-radius: 7px; padding: 6px 14px; cursor: pointer; font-weight: 500; }
+    .show-notes-btn:hover { background: #d0ecff; }
+    .session-info { font-size: 0.97em; color: #888; margin-bottom: 1em; }
+    .question-list { list-style: none; padding: 0; margin: 0; }
+    .question { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid #eee; transition: background 0.2s; }
+    .question.done { background: #f6fff6; opacity: 0.7; }
+    .question:last-child { border-bottom: none; }
+    .question-info { flex: 1; display: flex; flex-direction: column; }
+    .question-title { font-weight: 500; font-size: 1.08em; }
+    .question-link { color: #0074d9; text-decoration: none; font-size: 1em; }
+    .question-link:hover { text-decoration: underline; }
+    .difficulty { font-size: 0.93em; padding: 2px 10px; border-radius: 7px; margin-left: 10px; }
+    .difficulty.Easy { background: #e6f9e6; color: #2e8b57; }
+    .difficulty.Medium { background: #fffbe6; color: #b8860b; }
+    .difficulty.Hard { background: #ffe6e6; color: #b22222; }
+    .done-checkbox { margin-right: 18px; width: 20px; height: 20px; accent-color: #2e8b57; }
+    .note-btn { background: none; border: none; color: #888; cursor: pointer; font-size: 1.2em; margin-left: 12px; transition: color 0.2s; }
+    .note-btn.active { color: #0074d9; }
+    .note-btn:hover { color: #0074d9; }
+    .star-btn { background: none; border: none; color: #FFD700; cursor: pointer; font-size: 1.2em; margin-left: 12px; transition: transform 0.1s; }
+    .star-btn:hover { transform: scale(1.2); }
+    .notes-modal, .all-notes-modal { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #0005; display: flex; align-items: center; justify-content: center; z-index: 1000; }
+    .modal-content { background: #fff; padding: 28px 20px; border-radius: 12px; min-width: 320px; max-width: 95vw; }
+    .modal-content textarea { width: 100%; min-height: 90px; font-size: 1em; margin-bottom: 1em; border-radius: 7px; border: 1px solid #ddd; padding: 8px; }
+    .modal-content button { margin-right: 10px; }
+    .empty-msg { text-align: center; color: #aaa; margin: 2em 0; font-size: 1.1em; }
+    @media (max-width: 600px) {
+      .container { padding: 8px; }
+      .modal-content { padding: 12px; }
+      .top-bar { flex-direction: column; align-items: stretch; gap: 0.5em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-bar">
+      <h1>LeetCode Dashboard</h1>
+      <div class="filters">
+        <select id="difficultyFilter" onchange="renderQuestions()">
+          <option value="">All Difficulties</option>
+          <option value="Easy">Easy</option>
+          <option value="Medium">Medium</option>
+          <option value="Hard">Hard</option>
+        </select>
+        <button onclick="resetAll()" title="Reset all progress and notes">Reset All</button>
+        <a class="show-notes-btn" href="all_notes.html">All Notes</a>
+      </div>
+    </div>
+    <div class="session-info">
+      Progress and notes saved in localStorage.
+    </div>
+    <ul class="question-list" id="questionList"></ul>
+    <div id="emptyMsg" class="empty-msg" style="display:none;">No questions found for this filter.</div>
+  </div>
+
+  <div class="notes-modal" id="notesModal" style="display:none;">
+    <div class="modal-content">
+      <h3 id="modalTitle"></h3>
+      <textarea id="noteInput" placeholder="Write your notes here..."></textarea>
+      <br>
+      <button onclick="saveNote()">Save</button>
+      <button onclick="closeNotesModal()">Cancel</button>
+    </div>
+  </div>
+
+  <script>
+    let questions = [];
+    let currentNoteIdx = null;
+
+    function loadState() {
+      const done = JSON.parse(localStorage.getItem('doneQuestions') || '{}');
+      const notes = JSON.parse(localStorage.getItem('questionNotes') || '{}');
+      const stars = JSON.parse(localStorage.getItem('questionStars') || '{}');
+      questions.forEach(q => {
+        q.done = !!done[q.link];
+        q.note = notes[q.link] || '';
+        q.stars = stars[q.link] || 0;
+      });
+    }
+
+    function saveState() {
+      const done = {};
+      const notes = {};
+      const stars = {};
+      questions.forEach(q => {
+        if (q.done) done[q.link] = true;
+        if (q.note) notes[q.link] = q.note;
+        if (q.stars) stars[q.link] = q.stars;
+      });
+      localStorage.setItem('doneQuestions', JSON.stringify(done));
+      localStorage.setItem('questionNotes', JSON.stringify(notes));
+      localStorage.setItem('questionStars', JSON.stringify(stars));
+    }
+
+    function renderQuestions() {
+      const list = document.getElementById('questionList');
+      const filter = document.getElementById('difficultyFilter').value;
+      list.innerHTML = '';
+      let filtered = questions;
+      if (filter) filtered = questions.filter(q => q.difficulty === filter);
+      filtered.forEach((q, i) => {
+        const li = document.createElement('li');
+        li.className = 'question' + (q.done ? ' done' : '');
+        li.innerHTML = `
+          <input type="checkbox" class="done-checkbox" ${q.done ? 'checked' : ''} onchange="toggleDone(${i})">
+          <div class="question-info">
+            <span class="question-title">
+              <a class="question-link" href="${q.link}" target="_blank">${q.title}</a>
+              <span class="difficulty ${q.difficulty.replace('.', '')}">${q.difficulty}</span>
+            </span>
+          </div>
+          <button class="star-btn" onclick="toggleStar(${i})">★ ${q.stars}</button>
+          <button class="note-btn${q.note ? ' active' : ''}" onclick="openNotesModal(${i})">&#9998;</button>
+        `;
+        list.appendChild(li);
+      });
+      document.getElementById('emptyMsg').style.display = filtered.length ? 'none' : 'block';
+    }
+
+    function toggleDone(idx) {
+      questions[idx].done = !questions[idx].done;
+      renderQuestions();
+      saveState();
+    }
+
+    function openNotesModal(idx) {
+      currentNoteIdx = idx;
+      document.getElementById('modalTitle').textContent = questions[idx].title;
+      document.getElementById('noteInput').value = questions[idx].note || '';
+      document.getElementById('notesModal').style.display = 'flex';
+    }
+
+    function closeNotesModal() {
+      document.getElementById('notesModal').style.display = 'none';
+    }
+
+    function saveNote() {
+      const note = document.getElementById('noteInput').value.trim();
+      questions[currentNoteIdx].note = note;
+      closeNotesModal();
+      renderQuestions();
+      saveState();
+    }
+
+    function toggleStar(idx) {
+      questions[idx].stars = (questions[idx].stars || 0) + 1;
+      renderQuestions();
+      saveState();
+    }
+
+    function resetAll() {
+      if (confirm("Reset all progress? Notes and stars remain.")) {
+        questions.forEach(q => q.done = false);
+        renderQuestions();
+        saveState();
+      }
+    }
+
+    function init() {
+      fetch('leetcode_questions.json')
+        .then(res => res.ok ? res.json() : Promise.reject())
+        .then(data => {
+          questions = data;
+          loadState();
+          renderQuestions();
+        })
+        .catch(() => {
+          document.getElementById('questionList').innerHTML = '';
+          document.getElementById('emptyMsg').style.display = 'block';
+          document.getElementById('emptyMsg').textContent =
+            "Could not load questions. Serve via a local HTTP server.";
+        });
+    }
+
+    window.toggleDone = toggleDone;
+    window.openNotesModal = openNotesModal;
+    window.closeNotesModal = closeNotesModal;
+    window.saveNote = saveNote;
+    window.toggleStar = toggleStar;
+    window.resetAll = resetAll;
+
+    init();
+  </script>
+</body>
+</html>

@@ -1,0 +1,2072 @@
+[
+  {
+    "title": "1. Two Sum",
+    "link": "https://leetcode.com/problems/two-sum",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "3. Longest Substring Without Repeating Characters",
+    "link": "https://leetcode.com/problems/longest-substring-without-repeating-characters?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "6. Zigzag Conversion",
+    "link": "https://leetcode.com/problems/zigzag-conversion?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "7. Reverse Integer",
+    "link": "https://leetcode.com/problems/reverse-integer?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "9. Palindrome Number",
+    "link": "https://leetcode.com/problems/palindrome-number?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "11. Container With Most Water",
+    "link": "https://leetcode.com/problems/container-with-most-water?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "13. Roman to Integer",
+    "link": "https://leetcode.com/problems/roman-to-integer?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "14. Longest Common Prefix",
+    "link": "https://leetcode.com/problems/longest-common-prefix?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "15. 3Sum",
+    "link": "https://leetcode.com/problems/3sum?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "18. 4Sum",
+    "link": "https://leetcode.com/problems/4sum?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "20. Valid Parentheses",
+    "link": "https://leetcode.com/problems/valid-parentheses?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "26. Remove Duplicates from Sorted Array",
+    "link": "https://leetcode.com/problems/remove-duplicates-from-sorted-array?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "27. Remove Element",
+    "link": "https://leetcode.com/problems/remove-element?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "31. Next Permutation",
+    "link": "https://leetcode.com/problems/next-permutation?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "33. Search in Rotated Sorted Array",
+    "link": "https://leetcode.com/problems/search-in-rotated-sorted-array?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "42. Trapping Rain Water",
+    "link": "https://leetcode.com/problems/trapping-rain-water?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "50. Pow(x, n)",
+    "link": "https://leetcode.com/problems/powx-n?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "56. Merge Intervals",
+    "link": "https://leetcode.com/problems/merge-intervals?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "70. Climbing Stairs",
+    "link": "https://leetcode.com/problems/climbing-stairs?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "75. Sort Colors",
+    "link": "https://leetcode.com/problems/sort-colors?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "88. Merge Sorted Array",
+    "link": "https://leetcode.com/problems/merge-sorted-array?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "128. Longest Consecutive Sequence",
+    "link": "https://leetcode.com/problems/longest-consecutive-sequence?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "146. LRU Cache",
+    "link": "https://leetcode.com/problems/lru-cache?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "169. Majority Element",
+    "link": "https://leetcode.com/problems/majority-element?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "189. Rotate Array",
+    "link": "https://leetcode.com/problems/rotate-array?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "200. Number of Islands",
+    "link": "https://leetcode.com/problems/number-of-islands?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "206. Reverse Linked List",
+    "link": "https://leetcode.com/problems/reverse-linked-list?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "217. Contains Duplicate",
+    "link": "https://leetcode.com/problems/contains-duplicate?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "242. Valid Anagram",
+    "link": "https://leetcode.com/problems/valid-anagram?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "300. Longest Increasing Subsequence",
+    "link": "https://leetcode.com/problems/longest-increasing-subsequence?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "359. Logger Rate Limiter",
+    "link": "https://leetcode.com/problems/logger-rate-limiter?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "394. Decode String",
+    "link": "https://leetcode.com/problems/decode-string?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "424. Longest Repeating Character Replacement",
+    "link": "https://leetcode.com/problems/longest-repeating-character-replacement?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "1757. Recyclable and Low Fat Products",
+    "link": "https://leetcode.com/problems/recyclable-and-low-fat-products?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "875. Koko Eating Bananas",
+    "link": "https://leetcode.com/problems/koko-eating-bananas?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "35. Search Insert Position",
+    "link": "https://leetcode.com/problems/search-insert-position?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "2. Add Two Numbers",
+    "link": "https://leetcode.com/problems/add-two-numbers?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "4. Median of Two Sorted Arrays",
+    "link": "https://leetcode.com/problems/median-of-two-sorted-arrays?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "5. Longest Palindromic Substring",
+    "link": "https://leetcode.com/problems/longest-palindromic-substring?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "17. Letter Combinations of a Phone Number",
+    "link": "https://leetcode.com/problems/letter-combinations-of-a-phone-number?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "22. Generate Parentheses",
+    "link": "https://leetcode.com/problems/generate-parentheses?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "540. Single Element in a Sorted Array",
+    "link": "https://leetcode.com/problems/single-element-in-a-sorted-array?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "28. Find the Index of the First Occurrence in a String",
+    "link": "https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "41. First Missing Positive",
+    "link": "https://leetcode.com/problems/first-missing-positive?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "560. Subarray Sum Equals K",
+    "link": "https://leetcode.com/problems/subarray-sum-equals-k?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "49. Group Anagrams",
+    "link": "https://leetcode.com/problems/group-anagrams?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "48. Rotate Image",
+    "link": "https://leetcode.com/problems/rotate-image?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "51. N-Queens",
+    "link": "https://leetcode.com/problems/n-queens?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "53. Maximum Subarray",
+    "link": "https://leetcode.com/problems/maximum-subarray?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "54. Spiral Matrix",
+    "link": "https://leetcode.com/problems/spiral-matrix?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "55. Jump Game",
+    "link": "https://leetcode.com/problems/jump-game?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "62. Unique Paths",
+    "link": "https://leetcode.com/problems/unique-paths?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "66. Plus One",
+    "link": "https://leetcode.com/problems/plus-one?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "67. Add Binary",
+    "link": "https://leetcode.com/problems/add-binary?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "69. Sqrt(x)",
+    "link": "https://leetcode.com/problems/sqrtx?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "84. Largest Rectangle in Histogram",
+    "link": "https://leetcode.com/problems/largest-rectangle-in-histogram?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "118. Pascal's Triangle",
+    "link": "https://leetcode.com/problems/pascals-triangle?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "121. Best Time to Buy and Sell Stock",
+    "link": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "125. Valid Palindrome",
+    "link": "https://leetcode.com/problems/valid-palindrome?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "136. Single Number",
+    "link": "https://leetcode.com/problems/single-number?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "198. House Robber",
+    "link": "https://leetcode.com/problems/house-robber?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "202. Happy Number",
+    "link": "https://leetcode.com/problems/happy-number?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "207. Course Schedule",
+    "link": "https://leetcode.com/problems/course-schedule?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "2667. Create Hello World Function",
+    "link": "https://leetcode.com/problems/create-hello-world-function?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "253. Meeting Rooms II",
+    "link": "https://leetcode.com/problems/meeting-rooms-ii?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "322. Coin Change",
+    "link": "https://leetcode.com/problems/coin-change?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "2235. Add Two Integers",
+    "link": "https://leetcode.com/problems/add-two-integers?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "1768. Merge Strings Alternately",
+    "link": "https://leetcode.com/problems/merge-strings-alternately?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "380. Insert Delete GetRandom O(1)",
+    "link": "https://leetcode.com/problems/insert-delete-getrandom-o1?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "410. Split Array Largest Sum",
+    "link": "https://leetcode.com/problems/split-array-largest-sum?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "151. Reverse Words in a String",
+    "link": "https://leetcode.com/problems/reverse-words-in-a-string?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "10. Regular Expression Matching",
+    "link": "https://leetcode.com/problems/regular-expression-matching?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "162. Find Peak Element",
+    "link": "https://leetcode.com/problems/find-peak-element?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "231. Power of Two",
+    "link": "https://leetcode.com/problems/power-of-two?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "21. Merge Two Sorted Lists",
+    "link": "https://leetcode.com/problems/merge-two-sorted-lists?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "215. Kth Largest Element in an Array",
+    "link": "https://leetcode.com/problems/kth-largest-element-in-an-array?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "994. Rotting Oranges",
+    "link": "https://leetcode.com/problems/rotting-oranges?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "238. Product of Array Except Self",
+    "link": "https://leetcode.com/problems/product-of-array-except-self?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "876. Middle of the Linked List",
+    "link": "https://leetcode.com/problems/middle-of-the-linked-list?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "73. Set Matrix Zeroes",
+    "link": "https://leetcode.com/problems/set-matrix-zeroes?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "72. Edit Distance",
+    "link": "https://leetcode.com/problems/edit-distance?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "175. Combine Two Tables",
+    "link": "https://leetcode.com/problems/combine-two-tables?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "130. Surrounded Regions",
+    "link": "https://leetcode.com/problems/surrounded-regions?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "79. Word Search",
+    "link": "https://leetcode.com/problems/word-search?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "234. Palindrome Linked List",
+    "link": "https://leetcode.com/problems/palindrome-linked-list?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "283. Move Zeroes",
+    "link": "https://leetcode.com/problems/move-zeroes?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "704. Binary Search",
+    "link": "https://leetcode.com/problems/binary-search?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "205. Isomorphic Strings",
+    "link": "https://leetcode.com/problems/isomorphic-strings?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "347. Top K Frequent Elements",
+    "link": "https://leetcode.com/problems/top-k-frequent-elements?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "102. Binary Tree Level Order Traversal",
+    "link": "https://leetcode.com/problems/binary-tree-level-order-traversal?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "977. Squares of a Sorted Array",
+    "link": "https://leetcode.com/problems/squares-of-a-sorted-array?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "167. Two Sum II - Input Array Is Sorted",
+    "link": "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "44. Wildcard Matching",
+    "link": "https://leetcode.com/problems/wildcard-matching?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "58. Length of Last Word",
+    "link": "https://leetcode.com/problems/length-of-last-word?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "131. Palindrome Partitioning",
+    "link": "https://leetcode.com/problems/palindrome-partitioning?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "485. Max Consecutive Ones",
+    "link": "https://leetcode.com/problems/max-consecutive-ones?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "78. Subsets",
+    "link": "https://leetcode.com/problems/subsets?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "509. Fibonacci Number",
+    "link": "https://leetcode.com/problems/fibonacci-number?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "349. Intersection of Two Arrays",
+    "link": "https://leetcode.com/problems/intersection-of-two-arrays?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "100. Same Tree",
+    "link": "https://leetcode.com/problems/same-tree?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "912. Sort an Array",
+    "link": "https://leetcode.com/problems/sort-an-array?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "448. Find All Numbers Disappeared in an Array",
+    "link": "https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "16. 3Sum Closest",
+    "link": "https://leetcode.com/problems/3sum-closest?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "74. Search a 2D Matrix",
+    "link": "https://leetcode.com/problems/search-a-2d-matrix?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "103. Binary Tree Zigzag Level Order Traversal",
+    "link": "https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "1944. Number of Visible People in a Queue",
+    "link": "https://leetcode.com/problems/number-of-visible-people-in-a-queue?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "181. Employees Earning More Than Their Managers",
+    "link": "https://leetcode.com/problems/employees-earning-more-than-their-managers?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "778. Swim in Rising Water",
+    "link": "https://leetcode.com/problems/swim-in-rising-water?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "152. Maximum Product Subarray",
+    "link": "https://leetcode.com/problems/maximum-product-subarray?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "176. Second Highest Salary",
+    "link": "https://leetcode.com/problems/second-highest-salary?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "57. Insert Interval",
+    "link": "https://leetcode.com/problems/insert-interval?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "1752. Check if Array Is Sorted and Rotated",
+    "link": "https://leetcode.com/problems/check-if-array-is-sorted-and-rotated?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "1480. Running Sum of 1d Array",
+    "link": "https://leetcode.com/problems/running-sum-of-1d-array?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "577. Employee Bonus",
+    "link": "https://leetcode.com/problems/employee-bonus?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "414. Third Maximum Number",
+    "link": "https://leetcode.com/problems/third-maximum-number?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "83. Remove Duplicates from Sorted List",
+    "link": "https://leetcode.com/problems/remove-duplicates-from-sorted-list?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "345. Reverse Vowels of a String",
+    "link": "https://leetcode.com/problems/reverse-vowels-of-a-string?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "80. Remove Duplicates from Sorted Array II",
+    "link": "https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "1094. Car Pooling",
+    "link": "https://leetcode.com/problems/car-pooling?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "287. Find the Duplicate Number",
+    "link": "https://leetcode.com/problems/find-the-duplicate-number?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "595. Big Countries",
+    "link": "https://leetcode.com/problems/big-countries?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "344. Reverse String",
+    "link": "https://leetcode.com/problems/reverse-string?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "45. Jump Game II",
+    "link": "https://leetcode.com/problems/jump-game-ii?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "1929. Concatenation of Array",
+    "link": "https://leetcode.com/problems/concatenation-of-array?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "904. Fruit Into Baskets",
+    "link": "https://leetcode.com/problems/fruit-into-baskets?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "127. Word Ladder",
+    "link": "https://leetcode.com/problems/word-ladder?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "1101. The Earliest Moment When Everyone Become Friends",
+    "link": "https://leetcode.com/problems/the-earliest-moment-when-everyone-become-friends?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "34. Find First and Last Position of Element in Sorted Array",
+    "link": "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "1071. Greatest Common Divisor of Strings",
+    "link": "https://leetcode.com/problems/greatest-common-divisor-of-strings?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "219. Contains Duplicate II",
+    "link": "https://leetcode.com/problems/contains-duplicate-ii?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "39. Combination Sum",
+    "link": "https://leetcode.com/problems/combination-sum?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "444. Sequence Reconstruction",
+    "link": "https://leetcode.com/problems/sequence-reconstruction?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "645. Set Mismatch",
+    "link": "https://leetcode.com/problems/set-mismatch?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "268. Missing Number",
+    "link": "https://leetcode.com/problems/missing-number?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "1838. Frequency of the Most Frequent Element",
+    "link": "https://leetcode.com/problems/frequency-of-the-most-frequent-element?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "743. Network Delay Time",
+    "link": "https://leetcode.com/problems/network-delay-time?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "46. Permutations",
+    "link": "https://leetcode.com/problems/permutations?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "1502. Can Make Arithmetic Progression From Sequence",
+    "link": "https://leetcode.com/problems/can-make-arithmetic-progression-from-sequence?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "278. First Bad Version",
+    "link": "https://leetcode.com/problems/first-bad-version?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "2619. Array Prototype Last",
+    "link": "https://leetcode.com/problems/array-prototype-last?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "1004. Max Consecutive Ones III",
+    "link": "https://leetcode.com/problems/max-consecutive-ones-iii?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "32. Longest Valid Parentheses",
+    "link": "https://leetcode.com/problems/longest-valid-parentheses?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "139. Word Break",
+    "link": "https://leetcode.com/problems/word-break?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "179. Largest Number",
+    "link": "https://leetcode.com/problems/largest-number?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "643. Maximum Average Subarray I",
+    "link": "https://leetcode.com/problems/maximum-average-subarray-i?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "437. Path Sum III",
+    "link": "https://leetcode.com/problems/path-sum-iii?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "239. Sliding Window Maximum",
+    "link": "https://leetcode.com/problems/sliding-window-maximum?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "133. Clone Graph",
+    "link": "https://leetcode.com/problems/clone-graph?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "90. Subsets II",
+    "link": "https://leetcode.com/problems/subsets-ii?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "455. Assign Cookies",
+    "link": "https://leetcode.com/problems/assign-cookies?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "1922. Count Good Numbers",
+    "link": "https://leetcode.com/problems/count-good-numbers?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "85. Maximal Rectangle",
+    "link": "https://leetcode.com/problems/maximal-rectangle?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "503. Next Greater Element II",
+    "link": "https://leetcode.com/problems/next-greater-element-ii?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "496. Next Greater Element I",
+    "link": "https://leetcode.com/problems/next-greater-element-i?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "2149. Rearrange Array Elements by Sign",
+    "link": "https://leetcode.com/problems/rearrange-array-elements-by-sign?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "196. Delete Duplicate Emails",
+    "link": "https://leetcode.com/problems/delete-duplicate-emails?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "1470. Shuffle the Array",
+    "link": "https://leetcode.com/problems/shuffle-the-array?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "387. First Unique Character in a String",
+    "link": "https://leetcode.com/problems/first-unique-character-in-a-string?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "1539. Kth Missing Positive Number",
+    "link": "https://leetcode.com/problems/kth-missing-positive-number?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "1296. Divide Array in Sets of K Consecutive Numbers",
+    "link": "https://leetcode.com/problems/divide-array-in-sets-of-k-consecutive-numbers?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "24. Swap Nodes in Pairs",
+    "link": "https://leetcode.com/problems/swap-nodes-in-pairs?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "777. Swap Adjacent in LR String",
+    "link": "https://leetcode.com/problems/swap-adjacent-in-lr-string?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "833. Find And Replace in String",
+    "link": "https://leetcode.com/problems/find-and-replace-in-string?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "258. Add Digits",
+    "link": "https://leetcode.com/problems/add-digits?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "143. Reorder List",
+    "link": "https://leetcode.com/problems/reorder-list?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "25. Reverse Nodes in k-Group",
+    "link": "https://leetcode.com/problems/reverse-nodes-in-k-group?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "60. Permutation Sequence",
+    "link": "https://leetcode.com/problems/permutation-sequence?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "442. Find All Duplicates in an Array",
+    "link": "https://leetcode.com/problems/find-all-duplicates-in-an-array?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "815. Bus Routes",
+    "link": "https://leetcode.com/problems/bus-routes?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "2337. Move Pieces to Obtain a String",
+    "link": "https://leetcode.com/problems/move-pieces-to-obtain-a-string?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "392. Is Subsequence",
+    "link": "https://leetcode.com/problems/is-subsequence?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "155. Min Stack",
+    "link": "https://leetcode.com/problems/min-stack?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "99. Recover Binary Search Tree",
+    "link": "https://leetcode.com/problems/recover-binary-search-tree?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "110. Balanced Binary Tree",
+    "link": "https://leetcode.com/problems/balanced-binary-tree?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "907. Sum of Subarray Minimums",
+    "link": "https://leetcode.com/problems/sum-of-subarray-minimums?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "703. Kth Largest Element in a Stream",
+    "link": "https://leetcode.com/problems/kth-largest-element-in-a-stream?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "735. Asteroid Collision",
+    "link": "https://leetcode.com/problems/asteroid-collision?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "190. Reverse Bits",
+    "link": "https://leetcode.com/problems/reverse-bits?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "1441. Build an Array With Stack Operations",
+    "link": "https://leetcode.com/problems/build-an-array-with-stack-operations?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "621. Task Scheduler",
+    "link": "https://leetcode.com/problems/task-scheduler?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "1075. Project Employees I",
+    "link": "https://leetcode.com/problems/project-employees-i?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "77. Combinations",
+    "link": "https://leetcode.com/problems/combinations?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "61. Rotate List",
+    "link": "https://leetcode.com/problems/rotate-list?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "680. Valid Palindrome II",
+    "link": "https://leetcode.com/problems/valid-palindrome-ii?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "232. Implement Queue using Stacks",
+    "link": "https://leetcode.com/problems/implement-queue-using-stacks?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "416. Partition Equal Subset Sum",
+    "link": "https://leetcode.com/problems/partition-equal-subset-sum?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "528. Random Pick with Weight",
+    "link": "https://leetcode.com/problems/random-pick-with-weight?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "787. Cheapest Flights Within K Stops",
+    "link": "https://leetcode.com/problems/cheapest-flights-within-k-stops?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "8. String to Integer (atoi)",
+    "link": "https://leetcode.com/problems/string-to-integer-atoi?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "329. Longest Increasing Path in a Matrix",
+    "link": "https://leetcode.com/problems/longest-increasing-path-in-a-matrix?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "739. Daily Temperatures",
+    "link": "https://leetcode.com/problems/daily-temperatures?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "240. Search a 2D Matrix II",
+    "link": "https://leetcode.com/problems/search-a-2d-matrix-ii?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "168. Excel Sheet Column Title",
+    "link": "https://leetcode.com/problems/excel-sheet-column-title?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "101. Symmetric Tree",
+    "link": "https://leetcode.com/problems/symmetric-tree?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "494. Target Sum",
+    "link": "https://leetcode.com/problems/target-sum?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "642. Design Search Autocomplete System",
+    "link": "https://leetcode.com/problems/design-search-autocomplete-system?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "208. Implement Trie (Prefix Tree)",
+    "link": "https://leetcode.com/problems/implement-trie-prefix-tree?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "204. Count Primes",
+    "link": "https://leetcode.com/problems/count-primes?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "796. Rotate String",
+    "link": "https://leetcode.com/problems/rotate-string?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "3026. Maximum Good Subarray Sum",
+    "link": "https://leetcode.com/problems/maximum-good-subarray-sum?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "225. Implement Stack using Queues",
+    "link": "https://leetcode.com/problems/implement-stack-using-queues?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "834. Sum of Distances in Tree",
+    "link": "https://leetcode.com/problems/sum-of-distances-in-tree?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "1148. Article Views I",
+    "link": "https://leetcode.com/problems/article-views-i?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "1011. Capacity To Ship Packages Within D Days",
+    "link": "https://leetcode.com/problems/capacity-to-ship-packages-within-d-days?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "3474. Lexicographically Smallest Generated String",
+    "link": "https://leetcode.com/problems/lexicographically-smallest-generated-string?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "921. Minimum Add to Make Parentheses Valid",
+    "link": "https://leetcode.com/problems/minimum-add-to-make-parentheses-valid?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "68. Text Justification",
+    "link": "https://leetcode.com/problems/text-justification?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "746. Min Cost Climbing Stairs",
+    "link": "https://leetcode.com/problems/min-cost-climbing-stairs?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "36. Valid Sudoku",
+    "link": "https://leetcode.com/problems/valid-sudoku?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "12. Integer to Roman",
+    "link": "https://leetcode.com/problems/integer-to-roman?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "3741. Minimum Distance Between Three Equal Elements II",
+    "link": "https://leetcode.com/problems/minimum-distance-between-three-equal-elements-ii?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "3896. Minimum Operations to Transform Array into Alternating Prime",
+    "link": "https://leetcode.com/problems/minimum-operations-to-transform-array-into-alternating-prime?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "3743. Maximize Cyclic Partition Score",
+    "link": "https://leetcode.com/problems/maximize-cyclic-partition-score?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "109. Convert Sorted List to Binary Search Tree",
+    "link": "https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "199. Binary Tree Right Side View",
+    "link": "https://leetcode.com/problems/binary-tree-right-side-view?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "3894. Traffic Signal Color",
+    "link": "https://leetcode.com/problems/traffic-signal-color?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "1320. Minimum Distance to Type a Word Using Two Fingers",
+    "link": "https://leetcode.com/problems/minimum-distance-to-type-a-word-using-two-fingers?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "3592. Inverse Coin Change",
+    "link": "https://leetcode.com/problems/inverse-coin-change?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "228. Summary Ranges",
+    "link": "https://leetcode.com/problems/summary-ranges?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "3488. Closest Equal Element Queries",
+    "link": "https://leetcode.com/problems/closest-equal-element-queries?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "138. Copy List with Random Pointer",
+    "link": "https://leetcode.com/problems/copy-list-with-random-pointer?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "29. Divide Two Integers",
+    "link": "https://leetcode.com/problems/divide-two-integers?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "981. Time Based Key-Value Store",
+    "link": "https://leetcode.com/problems/time-based-key-value-store?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "3783. Mirror Distance of an Integer",
+    "link": "https://leetcode.com/problems/mirror-distance-of-an-integer?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "2011. Final Value of Variable After Performing Operations",
+    "link": "https://leetcode.com/problems/final-value-of-variable-after-performing-operations?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "226. Invert Binary Tree",
+    "link": "https://leetcode.com/problems/invert-binary-tree?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "701. Insert into a Binary Search Tree",
+    "link": "https://leetcode.com/problems/insert-into-a-binary-search-tree?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "328. Odd Even Linked List",
+    "link": "https://leetcode.com/problems/odd-even-linked-list?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "1722. Minimize Hamming Distance After Swap Operations",
+    "link": "https://leetcode.com/problems/minimize-hamming-distance-after-swap-operations?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "2452. Words Within Two Edits of Dictionary",
+    "link": "https://leetcode.com/problems/words-within-two-edits-of-dictionary?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "2078. Two Furthest Houses With Different Colors",
+    "link": "https://leetcode.com/problems/two-furthest-houses-with-different-colors?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "2615. Sum of Distances",
+    "link": "https://leetcode.com/problems/sum-of-distances?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "657. Robot Return to Origin",
+    "link": "https://leetcode.com/problems/robot-return-to-origin?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "3285. Find Indices of Stable Mountains",
+    "link": "https://leetcode.com/problems/find-indices-of-stable-mountains?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "3464. Maximize the Distance Between Points on a Square",
+    "link": "https://leetcode.com/problems/maximize-the-distance-between-points-on-a-square?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "126. Word Ladder II",
+    "link": "https://leetcode.com/problems/word-ladder-ii?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "1559. Detect Cycles in 2D Grid",
+    "link": "https://leetcode.com/problems/detect-cycles-in-2d-grid?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "191. Number of 1 Bits",
+    "link": "https://leetcode.com/problems/number-of-1-bits?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "1391. Check if There is a Valid Path in a Grid",
+    "link": "https://leetcode.com/problems/check-if-there-is-a-valid-path-in-a-grid?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "1047. Remove All Adjacent Duplicates In String",
+    "link": "https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "3481. Apply Substitutions",
+    "link": "https://leetcode.com/problems/apply-substitutions?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "1482. Minimum Number of Days to Make m Bouquets",
+    "link": "https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "542. 01 Matrix",
+    "link": "https://leetcode.com/problems/01-matrix?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "1043. Partition Array for Maximum Sum",
+    "link": "https://leetcode.com/problems/partition-array-for-maximum-sum?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "295. Find Median from Data Stream",
+    "link": "https://leetcode.com/problems/find-median-from-data-stream?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "3225. Maximum Score From Grid Operations",
+    "link": "https://leetcode.com/problems/maximum-score-from-grid-operations?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "368. Largest Divisible Subset",
+    "link": "https://leetcode.com/problems/largest-divisible-subset?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "1110. Delete Nodes And Return Forest",
+    "link": "https://leetcode.com/problems/delete-nodes-and-return-forest?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "64. Minimum Path Sum",
+    "link": "https://leetcode.com/problems/minimum-path-sum?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "678. Valid Parenthesis String",
+    "link": "https://leetcode.com/problems/valid-parenthesis-string?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "3742. Maximum Path Score in a Grid",
+    "link": "https://leetcode.com/problems/maximum-path-score-in-a-grid?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "1581. Customer Who Visited but Did Not Make Any Transactions",
+    "link": "https://leetcode.com/problems/customer-who-visited-but-did-not-make-any-transactions?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "546. Remove Boxes",
+    "link": "https://leetcode.com/problems/remove-boxes?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "1321. Restaurant Growth",
+    "link": "https://leetcode.com/problems/restaurant-growth?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "396. Rotate Function",
+    "link": "https://leetcode.com/problems/rotate-function?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "788. Rotated Digits",
+    "link": "https://leetcode.com/problems/rotated-digits?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "700. Search in a Binary Search Tree",
+    "link": "https://leetcode.com/problems/search-in-a-binary-search-tree?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "197. Rising Temperature",
+    "link": "https://leetcode.com/problems/rising-temperature?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "2877. Create a DataFrame from List",
+    "link": "https://leetcode.com/problems/create-a-dataframe-from-list?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "2356. Number of Unique Subjects Taught by Each Teacher",
+    "link": "https://leetcode.com/problems/number-of-unique-subjects-taught-by-each-teacher?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "1861. Rotating the Box",
+    "link": "https://leetcode.com/problems/rotating-the-box?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "213. House Robber II",
+    "link": "https://leetcode.com/problems/house-robber-ii?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "3660. Jump Game IX",
+    "link": "https://leetcode.com/problems/jump-game-ix?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "931. Minimum Falling Path Sum",
+    "link": "https://leetcode.com/problems/minimum-falling-path-sum?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "3629. Minimum Jumps to Reach End via Prime Teleportation",
+    "link": "https://leetcode.com/problems/minimum-jumps-to-reach-end-via-prime-teleportation?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "1914. Cyclically Rotating a Grid",
+    "link": "https://leetcode.com/problems/cyclically-rotating-a-grid?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "122. Best Time to Buy and Sell Stock II",
+    "link": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "2553. Separate the Digits in an Array",
+    "link": "https://leetcode.com/problems/separate-the-digits-in-an-array?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "1665. Minimum Initial Energy to Finish Tasks",
+    "link": "https://leetcode.com/problems/minimum-initial-energy-to-finish-tasks?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "1109. Corporate Flight Bookings",
+    "link": "https://leetcode.com/problems/corporate-flight-bookings?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "2784. Check if Array is Good",
+    "link": "https://leetcode.com/problems/check-if-array-is-good?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "1674. Minimum Moves to Make Array Complementary",
+    "link": "https://leetcode.com/problems/minimum-moves-to-make-array-complementary?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "153. Find Minimum in Rotated Sorted Array",
+    "link": "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "326. Power of Three",
+    "link": "https://leetcode.com/problems/power-of-three?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "105. Construct Binary Tree from Preorder and Inorder Traversal",
+    "link": "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "3932. Count K-th Roots in a Range",
+    "link": "https://leetcode.com/problems/count-k-th-roots-in-a-range?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "274. H-Index",
+    "link": "https://leetcode.com/problems/h-index?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "1345. Jump Game IV",
+    "link": "https://leetcode.com/problems/jump-game-iv?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "3043. Find the Length of the Longest Common Prefix",
+    "link": "https://leetcode.com/problems/find-the-length-of-the-longest-common-prefix?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "2657. Find the Prefix Common Array of Two Arrays",
+    "link": "https://leetcode.com/problems/find-the-prefix-common-array-of-two-arrays?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "1129. Shortest Path with Alternating Colors",
+    "link": "https://leetcode.com/problems/shortest-path-with-alternating-colors?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "1295. Find Numbers with Even Number of Digits",
+    "link": "https://leetcode.com/problems/find-numbers-with-even-number-of-digits?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "610. Triangle Judgement",
+    "link": "https://leetcode.com/problems/triangle-judgement?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "930. Binary Subarrays With Sum",
+    "link": "https://leetcode.com/problems/binary-subarrays-with-sum?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "2140. Solving Questions With Brainpower",
+    "link": "https://leetcode.com/problems/solving-questions-with-brainpower?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "443. String Compression",
+    "link": "https://leetcode.com/problems/string-compression?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "1340. Jump Game V",
+    "link": "https://leetcode.com/problems/jump-game-v?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "2396. Strictly Palindromic Number",
+    "link": "https://leetcode.com/problems/strictly-palindromic-number?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "532. K-diff Pairs in an Array",
+    "link": "https://leetcode.com/problems/k-diff-pairs-in-an-array?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "297. Serialize and Deserialize Binary Tree",
+    "link": "https://leetcode.com/problems/serialize-and-deserialize-binary-tree?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "3121. Count the Number of Special Characters II",
+    "link": "https://leetcode.com/problems/count-the-number-of-special-characters-ii?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "493. Reverse Pairs",
+    "link": "https://leetcode.com/problems/reverse-pairs?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "142. Linked List Cycle II",
+    "link": "https://leetcode.com/problems/linked-list-cycle-ii?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "71. Simplify Path",
+    "link": "https://leetcode.com/problems/simplify-path?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "2540. Minimum Common Value",
+    "link": "https://leetcode.com/problems/minimum-common-value?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "3300. Minimum Element After Replacement With Digit Sum",
+    "link": "https://leetcode.com/problems/minimum-element-after-replacement-with-digit-sum?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "733. Flood Fill",
+    "link": "https://leetcode.com/problems/flood-fill?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "1277. Count Square Submatrices with All Ones",
+    "link": "https://leetcode.com/problems/count-square-submatrices-with-all-ones?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "3161. Block Placement Queries",
+    "link": "https://leetcode.com/problems/block-placement-queries?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "132. Palindrome Partitioning II",
+    "link": "https://leetcode.com/problems/palindrome-partitioning-ii?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "1049. Last Stone Weight II",
+    "link": "https://leetcode.com/problems/last-stone-weight-ii?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "1729. Find Followers Count",
+    "link": "https://leetcode.com/problems/find-followers-count?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "2126. Destroying Asteroids",
+    "link": "https://leetcode.com/problems/destroying-asteroids?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "81. Search in Rotated Sorted Array II",
+    "link": "https://leetcode.com/problems/search-in-rotated-sorted-array-ii?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "412. Fizz Buzz",
+    "link": "https://leetcode.com/problems/fizz-buzz?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "511. Game Play Analysis I",
+    "link": "https://leetcode.com/problems/game-play-analysis-i?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "3633. Earliest Finish Time for Land and Water Rides I",
+    "link": "https://leetcode.com/problems/earliest-finish-time-for-land-and-water-rides-i?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "3738. Longest Non-Decreasing Subarray After Replacing at Most One Element",
+    "link": "https://leetcode.com/problems/longest-non-decreasing-subarray-after-replacing-at-most-one-element?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "713. Subarray Product Less Than K",
+    "link": "https://leetcode.com/problems/subarray-product-less-than-k?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "377. Combination Sum IV",
+    "link": "https://leetcode.com/problems/combination-sum-iv?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "3635. Earliest Finish Time for Land and Water Rides II",
+    "link": "https://leetcode.com/problems/earliest-finish-time-for-land-and-water-rides-ii?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "3753. Total Waviness of Numbers in Range II",
+    "link": "https://leetcode.com/problems/total-waviness-of-numbers-in-range-ii?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "415. Add Strings",
+    "link": "https://leetcode.com/problems/add-strings?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "3751. Total Waviness of Numbers in Range I",
+    "link": "https://leetcode.com/problems/total-waviness-of-numbers-in-range-i?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "543. Diameter of Binary Tree",
+    "link": "https://leetcode.com/problems/diameter-of-binary-tree?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "312. Burst Balloons",
+    "link": "https://leetcode.com/problems/burst-balloons?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "2574. Left and Right Sum Differences",
+    "link": "https://leetcode.com/problems/left-and-right-sum-differences?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "98. Validate Binary Search Tree",
+    "link": "https://leetcode.com/problems/validate-binary-search-tree?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "2196. Create Binary Tree From Descriptions",
+    "link": "https://leetcode.com/problems/create-binary-tree-from-descriptions?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "92. Reverse Linked List II",
+    "link": "https://leetcode.com/problems/reverse-linked-list-ii?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "2089. Find Target Indices After Sorting Array",
+    "link": "https://leetcode.com/problems/find-target-indices-after-sorting-array?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "547. Number of Provinces",
+    "link": "https://leetcode.com/problems/number-of-provinces?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "86. Partition List",
+    "link": "https://leetcode.com/problems/partition-list?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "673. Number of Longest Increasing Subsequence",
+    "link": "https://leetcode.com/problems/number-of-longest-increasing-subsequence?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "229. Majority Element II",
+    "link": "https://leetcode.com/problems/majority-element-ii?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "3689. Maximum Total Subarray Value I",
+    "link": "https://leetcode.com/problems/maximum-total-subarray-value-i?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "304. Range Sum Query 2D - Immutable",
+    "link": "https://leetcode.com/problems/range-sum-query-2d-immutable?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "124. Binary Tree Maximum Path Sum",
+    "link": "https://leetcode.com/problems/binary-tree-maximum-path-sum?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "355. Design Twitter",
+    "link": "https://leetcode.com/problems/design-twitter?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "1423. Maximum Points You Can Obtain from Cards",
+    "link": "https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "566. Reshape the Matrix",
+    "link": "https://leetcode.com/problems/reshape-the-matrix?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "1161. Maximum Level Sum of a Binary Tree",
+    "link": "https://leetcode.com/problems/maximum-level-sum-of-a-binary-tree?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "221. Maximal Square",
+    "link": "https://leetcode.com/problems/maximal-square?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "383. Ransom Note",
+    "link": "https://leetcode.com/problems/ransom-note?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "3559. Number of Ways to Assign Edge Weights II",
+    "link": "https://leetcode.com/problems/number-of-ways-to-assign-edge-weights-ii?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "164. Maximum Gap",
+    "link": "https://leetcode.com/problems/maximum-gap?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "1378. Replace Employee ID With The Unique Identifier",
+    "link": "https://leetcode.com/problems/replace-employee-id-with-the-unique-identifier?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "584. Find Customer Referee",
+    "link": "https://leetcode.com/problems/find-customer-referee?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "507. Perfect Number",
+    "link": "https://leetcode.com/problems/perfect-number?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "918. Maximum Sum Circular Subarray",
+    "link": "https://leetcode.com/problems/maximum-sum-circular-subarray?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "3691. Maximum Total Subarray Value II",
+    "link": "https://leetcode.com/problems/maximum-total-subarray-value-ii?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "2095. Delete the Middle Node of a Linked List",
+    "link": "https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "3432. Count Partitions with Even Sum Difference",
+    "link": "https://leetcode.com/problems/count-partitions-with-even-sum-difference?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "76. Minimum Window Substring",
+    "link": "https://leetcode.com/problems/minimum-window-substring?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "421. Maximum XOR of Two Numbers in an Array",
+    "link": "https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "399. Evaluate Division",
+    "link": "https://leetcode.com/problems/evaluate-division?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "19. Remove Nth Node From End of List",
+    "link": "https://leetcode.com/problems/remove-nth-node-from-end-of-list?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "567. Permutation in String",
+    "link": "https://leetcode.com/problems/permutation-in-string?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "1160. Find Words That Can Be Formed by Characters",
+    "link": "https://leetcode.com/problems/find-words-that-can-be-formed-by-characters?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "94. Binary Tree Inorder Traversal",
+    "link": "https://leetcode.com/problems/binary-tree-inorder-traversal?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "1603. Design Parking System",
+    "link": "https://leetcode.com/problems/design-parking-system?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "679. 24 Game",
+    "link": "https://leetcode.com/problems/24-game?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "1211. Queries Quality and Percentage",
+    "link": "https://leetcode.com/problems/queries-quality-and-percentage?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "148. Sort List",
+    "link": "https://leetcode.com/problems/sort-list?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "707. Design Linked List",
+    "link": "https://leetcode.com/problems/design-linked-list?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "1344. Angle Between Hands of a Clock",
+    "link": "https://leetcode.com/problems/angle-between-hands-of-a-clock?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "38. Count and Say",
+    "link": "https://leetcode.com/problems/count-and-say?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "881. Boats to Save People",
+    "link": "https://leetcode.com/problems/boats-to-save-people?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "1070. Product Sales Analysis III",
+    "link": "https://leetcode.com/problems/product-sales-analysis-iii?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "452. Minimum Number of Arrows to Burst Balloons",
+    "link": "https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "1732. Find the Highest Altitude",
+    "link": "https://leetcode.com/problems/find-the-highest-altitude?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "1700. Number of Students Unable to Eat Lunch",
+    "link": "https://leetcode.com/problems/number-of-students-unable-to-eat-lunch?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "433. Minimum Genetic Mutation",
+    "link": "https://leetcode.com/problems/minimum-genetic-mutation?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "853. Car Fleet",
+    "link": "https://leetcode.com/problems/car-fleet?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "120. Triangle",
+    "link": "https://leetcode.com/problems/triangle?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "2913. Subarrays Distinct Element Sum of Squares I",
+    "link": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-i?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "417. Pacific Atlantic Water Flow",
+    "link": "https://leetcode.com/problems/pacific-atlantic-water-flow?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "1193. Monthly Transactions I",
+    "link": "https://leetcode.com/problems/monthly-transactions-i?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "653. Two Sum IV - Input is a BST",
+    "link": "https://leetcode.com/problems/two-sum-iv-input-is-a-bst?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "209. Minimum Size Subarray Sum",
+    "link": "https://leetcode.com/problems/minimum-size-subarray-sum?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "695. Max Area of Island",
+    "link": "https://leetcode.com/problems/max-area-of-island?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "95. Unique Binary Search Trees II",
+    "link": "https://leetcode.com/problems/unique-binary-search-trees-ii?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "901. Online Stock Span",
+    "link": "https://leetcode.com/problems/online-stock-span?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "605. Can Place Flowers",
+    "link": "https://leetcode.com/problems/can-place-flowers?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "141. Linked List Cycle",
+    "link": "https://leetcode.com/problems/linked-list-cycle?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "223. Rectangle Area",
+    "link": "https://leetcode.com/problems/rectangle-area?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "3761. Minimum Absolute Distance Between Mirror Pairs",
+    "link": "https://leetcode.com/problems/minimum-absolute-distance-between-mirror-pairs?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "1189. Maximum Number of Balloons",
+    "link": "https://leetcode.com/problems/maximum-number-of-balloons?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "1281. Subtract the Product and Sum of Digits of an Integer",
+    "link": "https://leetcode.com/problems/subtract-the-product-and-sum-of-digits-of-an-integer?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "1589. Maximum Sum Obtained of Any Permutation",
+    "link": "https://leetcode.com/problems/maximum-sum-obtained-of-any-permutation?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "96. Unique Binary Search Trees",
+    "link": "https://leetcode.com/problems/unique-binary-search-trees?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "1341. Movie Rating",
+    "link": "https://leetcode.com/problems/movie-rating?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "1907. Count Salary Categories",
+    "link": "https://leetcode.com/problems/count-salary-categories?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "963. Minimum Area Rectangle II",
+    "link": "https://leetcode.com/problems/minimum-area-rectangle-ii?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "3699. Number of ZigZag Arrays I",
+    "link": "https://leetcode.com/problems/number-of-zigzag-arrays-i?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "741. Cherry Pickup",
+    "link": "https://leetcode.com/problems/cherry-pickup?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "327. Count of Range Sum",
+    "link": "https://leetcode.com/problems/count-of-range-sum?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "3737. Count Subarrays With Majority Element I",
+    "link": "https://leetcode.com/problems/count-subarrays-with-majority-element-i?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "403. Frog Jump",
+    "link": "https://leetcode.com/problems/frog-jump?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "3700. Number of ZigZag Arrays II",
+    "link": "https://leetcode.com/problems/number-of-zigzag-arrays-ii?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "790. Domino and Tromino Tiling",
+    "link": "https://leetcode.com/problems/domino-and-tromino-tiling?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "3573. Best Time to Buy and Sell Stock V",
+    "link": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-v?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "3962. Maximum Subarray Sum After at Most K Swaps",
+    "link": "https://leetcode.com/problems/maximum-subarray-sum-after-at-most-k-swaps?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "183. Customers Who Never Order",
+    "link": "https://leetcode.com/problems/customers-who-never-order?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "427. Construct Quad Tree",
+    "link": "https://leetcode.com/problems/construct-quad-tree?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "389. Find the Difference",
+    "link": "https://leetcode.com/problems/find-the-difference?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "135. Candy",
+    "link": "https://leetcode.com/problems/candy?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "461. Hamming Distance",
+    "link": "https://leetcode.com/problems/hamming-distance?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "237. Delete Node in a Linked List",
+    "link": "https://leetcode.com/problems/delete-node-in-a-linked-list?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "1251. Average Selling Price",
+    "link": "https://leetcode.com/problems/average-selling-price?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "1240. Tiling a Rectangle with the Fewest Squares",
+    "link": "https://leetcode.com/problems/tiling-a-rectangle-with-the-fewest-squares?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Hard"
+  },
+  {
+    "title": "435. Non-overlapping Intervals",
+    "link": "https://leetcode.com/problems/non-overlapping-intervals?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "754. Reach a Number",
+    "link": "https://leetcode.com/problems/reach-a-number?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "1021. Remove Outermost Parentheses",
+    "link": "https://leetcode.com/problems/remove-outermost-parentheses?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "97. Interleaving String",
+    "link": "https://leetcode.com/problems/interleaving-string?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "3020. Find the Maximum Number of Elements in Subset",
+    "link": "https://leetcode.com/problems/find-the-maximum-number-of-elements-in-subset?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "137. Single Number II",
+    "link": "https://leetcode.com/problems/single-number-ii?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "457. Circular Array Loop",
+    "link": "https://leetcode.com/problems/circular-array-loop?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "525. Contiguous Array",
+    "link": "https://leetcode.com/problems/contiguous-array?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "367. Valid Perfect Square",
+    "link": "https://leetcode.com/problems/valid-perfect-square?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "860. Lemonade Change",
+    "link": "https://leetcode.com/problems/lemonade-change?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Easy"
+  },
+  {
+    "title": "114. Flatten Binary Tree to Linked List",
+    "link": "https://leetcode.com/problems/flatten-binary-tree-to-linked-list?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "1846. Maximum Element After Decreasing and Rearranging",
+    "link": "https://leetcode.com/problems/maximum-element-after-decreasing-and-rearranging?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  },
+  {
+    "title": "863. All Nodes Distance K in Binary Tree",
+    "link": "https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree?envType=company&amp;envId=google&amp;favoriteSlug=google-three-months",
+    "difficulty": "Med."
+  }
+]
