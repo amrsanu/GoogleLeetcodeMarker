@@ -1,91 +1,519 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>LeetCode Dashboard - All Notes</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body { font-family: 'Inter', Arial, sans-serif; background: #f6f8fa; color: #222; margin: 0; }
-    .container { max-width: 800px; margin: 40px auto; padding: 28px 20px 32px 20px; background: #fff; border-radius: 16px; box-shadow: 0 4px 24px #0002; }
-    h1 { font-size: 2.2rem; margin-bottom: 0.5em; letter-spacing: -1px; }
-    .back-btn { background: #eaf6ff; border: 1px solid #b3e0ff; color: #0074d9; border-radius: 7px; padding: 6px 14px; cursor: pointer; font-weight: 500; margin-bottom: 1.5em; }
-    .back-btn:hover { background: #d0ecff; }
-    .all-notes-list { }
-    .all-notes-item { margin-bottom: 2em; padding-bottom: 1em; border-bottom: 1px solid #eee; }
-    .all-notes-item:last-child { border-bottom: none; }
-    .question-link { color: #0074d9; text-decoration: none; font-size: 1.08em; font-weight: 500; }
-    .question-link:hover { text-decoration: underline; }
-    .difficulty { font-size: 0.93em; padding: 2px 10px; border-radius: 7px; margin-left: 10px; }
-    .difficulty.Easy { background: #e6f9e6; color: #2e8b57; }
-    .difficulty.Med { background: #fffbe6; color: #b8860b; }
-    .difficulty.Medium { background: #fffbe6; color: #b8860b; }
-    .difficulty.Hard { background: #ffe6e6; color: #b22222; }
-    .note-content { margin-top: 8px; white-space: pre-line; color: #444; font-size: 1.05em; }
-    .empty-msg { text-align: center; color: #aaa; margin: 2em 0; font-size: 1.1em; }
-    @media (max-width: 600px) {
-      .container { padding: 8px; }
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <button class="back-btn" onclick="window.location.href='dashboard.html'">&larr; Back to Dashboard</button>
-    <h1>All Notes</h1>
-    <div class="all-notes-list" id="allNotesList"></div>
-    <div id="emptyMsg" class="empty-msg" style="display:none;">No notes added yet.</div>
-  </div>
-  <script>
-    let questions = [];
-    function loadQuestions() {
-      fetch('leetcode_questions.json')
-        .then(res => res.ok ? res.json() : Promise.reject())
-        .then(data => {
+  <head>
+    <meta charset="UTF-8" />
+    <title>All Notes – LeetCode Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      :root {
+        --bg: #f0f2f5;
+        --surface: #ffffff;
+        --border: #e4e9f0;
+        --text: #1a202c;
+        --muted: #718096;
+        --primary: #4f46e5;
+        --primary-lt: #eef2ff;
+        --easy: #38a169;
+        --easy-bg: #f0fff4;
+        --med: #d97706;
+        --med-bg: #fffbeb;
+        --hard: #dc2626;
+        --hard-bg: #fff5f5;
+        --radius: 14px;
+        --shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter",
+          Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      .page {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 28px 20px 60px;
+      }
+
+      /* ── top bar ── */
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 16px;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .back-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 14px;
+        border-radius: 8px;
+        background: var(--surface);
+        border: 1.5px solid var(--border);
+        color: var(--muted);
+        font-size: 0.82rem;
+        font-weight: 700;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.12s;
+      }
+      .back-btn:hover {
+        border-color: var(--primary);
+        color: var(--primary);
+        background: var(--primary-lt);
+      }
+      .topbar-right {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .note-count {
+        font-size: 0.82rem;
+        color: var(--muted);
+      }
+      .note-count strong {
+        color: var(--primary);
+        font-weight: 700;
+        font-size: 0.95rem;
+      }
+
+      /* ── search ── */
+      .search-wrap {
+        background: var(--surface);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 12px 18px;
+        margin-bottom: 14px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .search-icon {
+        color: var(--muted);
+        font-size: 1rem;
+        flex-shrink: 0;
+      }
+      .search-input {
+        flex: 1;
+        border: none;
+        outline: none;
+        font-size: 0.9rem;
+        background: transparent;
+        color: var(--text);
+      }
+      .search-input::placeholder {
+        color: #bfc7d4;
+      }
+      .search-clear {
+        background: none;
+        border: none;
+        color: var(--muted);
+        cursor: pointer;
+        font-size: 1rem;
+        padding: 2px 6px;
+        border-radius: 5px;
+        display: none;
+      }
+      .search-clear:hover {
+        background: var(--border);
+      }
+
+      /* ── filter pills ── */
+      .filter-bar {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        margin-bottom: 14px;
+      }
+      .pill {
+        padding: 4px 12px;
+        border-radius: 20px;
+        border: 1.5px solid var(--border);
+        background: transparent;
+        color: var(--muted);
+        cursor: pointer;
+        font-size: 0.78rem;
+        font-weight: 700;
+        transition: all 0.12s;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .pill:hover {
+        border-color: var(--primary);
+        color: var(--primary);
+      }
+      .pill.active {
+        background: var(--primary);
+        border-color: var(--primary);
+        color: #fff;
+      }
+      .pill.easy.active {
+        background: var(--easy);
+        border-color: var(--easy);
+      }
+      .pill.med.active {
+        background: var(--med);
+        border-color: var(--med);
+      }
+      .pill.hard.active {
+        background: var(--hard);
+        border-color: var(--hard);
+      }
+      .pill-count {
+        font-size: 0.72rem;
+        font-weight: 700;
+        background: rgba(0, 0, 0, 0.09);
+        border-radius: 10px;
+        padding: 0 5px;
+        min-width: 18px;
+        text-align: center;
+      }
+      .pill.active .pill-count {
+        background: rgba(255, 255, 255, 0.25);
+      }
+
+      /* ── notes list ── */
+      .notes-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .note-card {
+        background: var(--surface);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        border-left: 4px solid var(--border);
+        overflow: hidden;
+        transition: box-shadow 0.12s;
+      }
+      .note-card:hover {
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+      }
+      .note-card.Easy {
+        border-left-color: var(--easy);
+      }
+      .note-card.Med {
+        border-left-color: var(--med);
+      }
+      .note-card.Hard {
+        border-left-color: var(--hard);
+      }
+
+      .note-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 13px 18px 10px;
+        gap: 10px;
+        cursor: pointer;
+        user-select: none;
+      }
+      .note-header-left {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .note-title {
+        font-size: 0.93rem;
+        font-weight: 600;
+        color: var(--text);
+        text-decoration: none;
+      }
+      .note-title:hover {
+        color: var(--primary);
+      }
+      .diff {
+        font-size: 0.71rem;
+        font-weight: 700;
+        padding: 2px 7px;
+        border-radius: 5px;
+        flex-shrink: 0;
+      }
+      .diff.Easy {
+        background: var(--easy-bg);
+        color: var(--easy);
+      }
+      .diff.Med {
+        background: var(--med-bg);
+        color: var(--med);
+      }
+      .diff.Hard {
+        background: var(--hard-bg);
+        color: var(--hard);
+      }
+      .chevron {
+        color: var(--muted);
+        font-size: 0.8rem;
+        flex-shrink: 0;
+        transition: transform 0.2s;
+      }
+      .note-card.open .chevron {
+        transform: rotate(180deg);
+      }
+
+      .note-body {
+        display: none;
+        padding: 0 18px 16px;
+        border-top: 1px solid var(--border);
+      }
+      .note-card.open .note-body {
+        display: block;
+      }
+      .note-text {
+        white-space: pre-wrap;
+        font-size: 0.875rem;
+        color: #374151;
+        line-height: 1.8;
+        padding-top: 12px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter",
+          Arial, sans-serif;
+      }
+      /* highlight search match */
+      mark {
+        background: #fef08a;
+        border-radius: 2px;
+        padding: 0 1px;
+        color: inherit;
+      }
+
+      /* ── empty ── */
+      .empty {
+        text-align: center;
+        padding: 60px 24px;
+        color: var(--muted);
+        background: var(--surface);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+      .empty .icon {
+        font-size: 2.4rem;
+        display: block;
+        margin-bottom: 12px;
+      }
+
+      @media (max-width: 600px) {
+        .page {
+          padding: 0 0 40px;
+        }
+        .note-card {
+          border-radius: 0;
+        }
+        .search-wrap {
+          border-radius: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="topbar">
+        <a class="back-btn" href="dashboard.html">← Dashboard</a>
+        <div class="topbar-right">
+          <span class="note-count"><strong id="visCount">0</strong> notes</span>
+        </div>
+      </div>
+
+      <!-- search -->
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input
+          class="search-input"
+          id="searchInput"
+          type="text"
+          placeholder="Search notes or question titles…"
+          oninput="onSearch()"
+          autocomplete="off"
+        />
+        <button class="search-clear" id="clearBtn" onclick="clearSearch()">
+          ✕
+        </button>
+      </div>
+
+      <!-- filter pills -->
+      <div class="filter-bar">
+        <button class="pill active" onclick="setFilter(this,'')" data-f="">
+          All <span class="pill-count" id="fc-all"></span>
+        </button>
+        <button
+          class="pill easy"
+          onclick="setFilter(this,'Easy')"
+          data-f="Easy"
+        >
+          Easy <span class="pill-count" id="fc-easy"></span>
+        </button>
+        <button class="pill med" onclick="setFilter(this,'Med.')" data-f="Med.">
+          Med. <span class="pill-count" id="fc-med"></span>
+        </button>
+        <button
+          class="pill hard"
+          onclick="setFilter(this,'Hard')"
+          data-f="Hard"
+        >
+          Hard <span class="pill-count" id="fc-hard"></span>
+        </button>
+      </div>
+
+      <div class="notes-list" id="notesList">
+        <div class="empty"><span class="icon">⏳</span>Loading…</div>
+      </div>
+    </div>
+    <script>
+      let questions = [];
+      let curFilter = "";
+      let curSearch = "";
+
+      /* ─── data ── */
+      function loadState() {
+        return fetch("/state")
+          .then((r) => (r.ok ? r.json() : { notes: {} }))
+          .then(({ notes = {} }) => {
+            questions.forEach((q) => {
+              q.note = notes[q.link] || "";
+            });
+          })
+          .catch(() => {});
+      }
+
+      /* ─── filter / search ── */
+      function setFilter(btn, f) {
+        document
+          .querySelectorAll(".pill")
+          .forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        curFilter = f;
+        render();
+      }
+
+      function onSearch() {
+        curSearch = document.getElementById("searchInput").value;
+        document.getElementById("clearBtn").style.display = curSearch
+          ? "block"
+          : "none";
+        render();
+      }
+
+      function clearSearch() {
+        document.getElementById("searchInput").value = "";
+        curSearch = "";
+        document.getElementById("clearBtn").style.display = "none";
+        render();
+      }
+
+      function getVisible() {
+        let list = questions.filter((q) => q.note);
+        if (curFilter) list = list.filter((q) => q.difficulty === curFilter);
+        if (curSearch) {
+          const q = curSearch.toLowerCase();
+          list = list.filter(
+            (q2) =>
+              q2.title.toLowerCase().includes(q) ||
+              q2.note.toLowerCase().includes(q)
+          );
+        }
+        return list;
+      }
+
+      /* ─── counts ── */
+      function updateCounts(all) {
+        const byDiff = (d) => all.filter((q) => q.difficulty === d).length;
+        document.getElementById("fc-all").textContent = all.length;
+        document.getElementById("fc-easy").textContent = byDiff("Easy");
+        document.getElementById("fc-med").textContent = byDiff("Med.");
+        document.getElementById("fc-hard").textContent = byDiff("Hard");
+      }
+
+      /* ─── highlight ── */
+      function hl(text, term) {
+        if (!term) return escHtml(text);
+        const re = new RegExp(
+          "(" + term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")",
+          "gi"
+        );
+        return escHtml(text).replace(re, "<mark>$1</mark>");
+      }
+      function escHtml(s) {
+        return s
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;");
+      }
+
+      /* ─── render ── */
+      function render() {
+        const all = questions.filter((q) => q.note);
+        updateCounts(all);
+
+        const visible = getVisible();
+        document.getElementById("visCount").textContent = visible.length;
+
+        const container = document.getElementById("notesList");
+        if (!visible.length) {
+          container.innerHTML = `<div class="empty"><span class="icon">🔍</span>${
+            curSearch || curFilter
+              ? "No notes match this filter."
+              : "No notes yet. Add notes from the dashboard."
+          }</div>`;
+          return;
+        }
+
+        container.innerHTML = "";
+        visible.forEach((q, i) => {
+          const diffClass = q.difficulty.replace(".", "");
+          const card = document.createElement("div");
+          card.className = `note-card ${diffClass}`;
+
+          card.innerHTML = `
+        <div class="note-header">
+          <div class="note-header-left">
+            <a class="note-title" href="${
+              q.link
+            }" target="_blank" onclick="event.stopPropagation()">${hl(
+            q.title,
+            curSearch
+          )}</a>
+            <span class="diff ${diffClass}">${q.difficulty}</span>
+          </div>
+          <span class="chevron">▼</span>
+        </div>
+        <div class="note-body">
+          <div class="note-text">${hl(q.note, curSearch)}</div>
+        </div>`;
+
+          // open first card by default, rest collapsed
+          if (i === 0) card.classList.add("open");
+
+          card.querySelector(".note-header").addEventListener("click", () => {
+            card.classList.toggle("open");
+          });
+
+          container.appendChild(card);
+        });
+      }
+
+      /* ─── init ── */
+      fetch("leetcode_questions.json")
+        .then((r) => (r.ok ? r.json() : Promise.reject()))
+        .then((data) => {
           questions = data;
           return loadState();
         })
-        .then(() => {
-          renderNotes();
-        })
+        .then(() => render())
         .catch(() => {
-          document.getElementById('allNotesList').innerHTML = '';
-          document.getElementById('emptyMsg').style.display = 'block';
-          document.getElementById('emptyMsg').textContent =
-            "Could not load leetcode_questions.json. Please use a local web server (e.g., 'npx serve .') to view this page.";
+          document.getElementById(
+            "notesList"
+          ).innerHTML = `<div class="empty"><span class="icon">⚠️</span>Could not load data. Start the server with <code>node server.js</code>.</div>`;
         });
-    }
-    function loadState() {
-      return fetch('/state')
-        .then(res => res.ok ? res.json() : Promise.resolve({ notes: {} }))
-        .then(state => {
-          const notes = state.notes || {};
-          questions.forEach(q => {
-            q.note = notes[q.link] || '';
-          });
-        })
-        .catch(() => {
-          const notes = JSON.parse(localStorage.getItem('questionNotes') || '{}');
-          questions.forEach(q => {
-            q.note = notes[q.link] || '';
-          });
-        });
-    }
-    function renderNotes() {
-      const notesList = document.getElementById('allNotesList');
-      notesList.innerHTML = '';
-      const notes = questions.filter(q => q.note);
-      notes.forEach(q => {
-        const div = document.createElement('div');
-        div.className = 'all-notes-item';
-        div.innerHTML = `
-          <a href="${q.link}" target="_blank" class="question-link">${q.title}</a>
-          <span class="difficulty ${q.difficulty.replace('.', '')}">${q.difficulty}</span>
-          <div class="note-content">${q.note}</div>
-        `;
-        notesList.appendChild(div);
-      });
-      document.getElementById('emptyMsg').style.display = notes.length === 0 ? 'block' : 'none';
-    }
-    loadQuestions();
-  </script>
-</body>
+    </script>
+  </body>
 </html>

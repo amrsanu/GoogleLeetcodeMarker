@@ -1,236 +1,862 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>LeetCode Minimalist Dashboard</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body { font-family: 'Inter', Arial, sans-serif; background: #f6f8fa; color: #222; margin: 0; }
-    .container { width: 90%; max-width: 900px; margin: 40px auto; padding: 28px 20px 32px 20px; background: #fff; border-radius: 16px; box-shadow: 0 4px 24px #0002; }
-    h1 { font-size: 2.2rem; margin-bottom: 0.5em; letter-spacing: -1px; }
-    .top-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1em; margin-bottom: 1.5em; }
-    .filters { display: flex; gap: 1em; align-items: center; }
-    .filters select, .filters button { font-size: 1em; padding: 6px 14px; border-radius: 7px; border: 1px solid #ddd; background: #f7f7fa; color: #222; }
-    .filters button { background: #f2f2f2; border: 1px solid #ccc; cursor: pointer; transition: background 0.2s; }
-    .filters button:hover { background: #e6e6e6; }
-    .show-notes-btn { background: #eaf6ff; border: 1px solid #b3e0ff; color: #0074d9; border-radius: 7px; padding: 6px 14px; cursor: pointer; font-weight: 500; }
-    .show-notes-btn:hover { background: #d0ecff; }
-    .session-info { font-size: 0.97em; color: #888; margin-bottom: 1em; }
-    .question-list { list-style: none; padding: 0; margin: 0; }
-    .question { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid #eee; transition: background 0.2s; }
-    .question.done { background: #f6fff6; opacity: 0.7; }
-    .question:last-child { border-bottom: none; }
-    .question-info { flex: 1; display: flex; flex-direction: column; }
-    .question-title { font-weight: 500; font-size: 1.08em; }
-    .question-link { color: #0074d9; text-decoration: none; font-size: 1em; }
-    .question-link:hover { text-decoration: underline; }
-    .difficulty { font-size: 0.93em; padding: 2px 10px; border-radius: 7px; margin-left: 10px; }
-    .difficulty.Easy { background: #e6f9e6; color: #2e8b57; }
-    .difficulty.Medium { background: #fffbe6; color: #b8860b; }
-    .difficulty.Hard { background: #ffe6e6; color: #b22222; }
-    .done-checkbox { margin-right: 18px; width: 20px; height: 20px; accent-color: #2e8b57; }
-    .note-btn { background: none; border: none; color: #888; cursor: pointer; font-size: 1.2em; margin-left: 12px; transition: color 0.2s; }
-    .note-btn.active { color: #0074d9; }
-    .note-btn:hover { color: #0074d9; }
-    .star-btn { background: none; border: none; color: #FFD700; cursor: pointer; font-size: 1.2em; margin-left: 12px; transition: transform 0.1s; }
-    .star-btn:hover { transform: scale(1.2); }
-    .notes-modal, .all-notes-modal { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #0005; display: flex; align-items: center; justify-content: center; z-index: 1000; }
-    .modal-content { background: #fff; padding: 28px 20px; border-radius: 12px; min-width: 320px; max-width: 95vw; }
-    .modal-content textarea { width: 100%; min-height: 90px; font-size: 1em; margin-bottom: 1em; border-radius: 7px; border: 1px solid #ddd; padding: 8px; }
-    .modal-content button { margin-right: 10px; }
-    .empty-msg { text-align: center; color: #aaa; margin: 2em 0; font-size: 1.1em; }
-    @media (max-width: 600px) {
-      .container { padding: 8px; }
-      .modal-content { padding: 12px; }
-      .top-bar { flex-direction: column; align-items: stretch; gap: 0.5em; }
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="top-bar">
-      <h1>LeetCode Dashboard</h1>
-      <div class="filters">
-        <select id="difficultyFilter" onchange="renderQuestions()">
-          <option value="">All Difficulties</option>
-          <option value="Easy">Easy</option>
-          <option value="Medium">Medium</option>
-          <option value="Hard">Hard</option>
+  <head>
+    <meta charset="UTF-8" />
+    <title>LeetCode Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      :root {
+        --bg: #f0f2f5;
+        --surface: #ffffff;
+        --border: #e4e9f0;
+        --text: #1a202c;
+        --muted: #718096;
+        --primary: #4f46e5;
+        --primary-lt: #eef2ff;
+        --easy: #38a169;
+        --easy-bg: #f0fff4;
+        --med: #d97706;
+        --med-bg: #fffbeb;
+        --hard: #dc2626;
+        --hard-bg: #fff5f5;
+        --star: #f59e0b;
+        --done-bg: #f8fafc;
+        --radius: 14px;
+        --shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter",
+          Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.5;
+      }
+
+      /* ── Layout ── */
+      .page {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 28px 20px 60px;
+      }
+
+      /* ── Header card ── */
+      .header-card {
+        background: var(--surface);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 24px 28px 20px;
+        margin-bottom: 12px;
+      }
+      .header-top {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        margin-bottom: 14px;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .header-title {
+        font-size: 1.75rem;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+      }
+      .header-stat {
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+      .header-stat strong {
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: var(--primary);
+      }
+      .progress-track {
+        background: #e9edf5;
+        border-radius: 6px;
+        height: 7px;
+        overflow: hidden;
+      }
+      .progress-fill {
+        height: 100%;
+        background: linear-gradient(90deg, var(--primary) 0%, #818cf8 100%);
+        border-radius: 6px;
+        transition: width 0.5s ease;
+      }
+
+      /* ── Controls card ── */
+      .controls-card {
+        background: var(--surface);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 14px 20px;
+        margin-bottom: 12px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+      }
+      .ctrl-label {
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.6px;
+        color: var(--muted);
+      }
+      .filter-pills {
+        display: flex;
+        gap: 5px;
+        flex-wrap: wrap;
+      }
+      .pill {
+        padding: 4px 12px;
+        border-radius: 20px;
+        border: 1.5px solid var(--border);
+        background: transparent;
+        color: var(--muted);
+        cursor: pointer;
+        font-size: 0.82rem;
+        font-weight: 600;
+        transition: all 0.15s;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .pill:hover {
+        border-color: var(--primary);
+        color: var(--primary);
+      }
+      .pill.active {
+        background: var(--primary);
+        border-color: var(--primary);
+        color: #fff;
+      }
+      .pill.easy.active {
+        background: var(--easy);
+        border-color: var(--easy);
+      }
+      .pill.med.active {
+        background: var(--med);
+        border-color: var(--med);
+      }
+      .pill.hard.active {
+        background: var(--hard);
+        border-color: var(--hard);
+      }
+      .pill-count {
+        font-size: 0.73rem;
+        font-weight: 700;
+        opacity: 0.8;
+        background: rgba(0, 0, 0, 0.08);
+        border-radius: 10px;
+        padding: 0 5px;
+        min-width: 20px;
+        text-align: center;
+      }
+      .pill.active .pill-count {
+        background: rgba(255, 255, 255, 0.25);
+      }
+      .vsep {
+        width: 1px;
+        height: 26px;
+        background: var(--border);
+        flex-shrink: 0;
+      }
+      .sort-select {
+        padding: 5px 10px;
+        border-radius: 8px;
+        border: 1.5px solid var(--border);
+        background: #fff;
+        color: var(--text);
+        font-size: 0.82rem;
+        font-weight: 600;
+        cursor: pointer;
+        outline: none;
+      }
+      .sort-select:focus {
+        border-color: var(--primary);
+      }
+      .btn-all-notes {
+        margin-left: auto;
+        padding: 6px 14px;
+        border-radius: 8px;
+        background: var(--primary-lt);
+        color: var(--primary);
+        border: none;
+        font-size: 0.82rem;
+        font-weight: 700;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .btn-all-notes:hover {
+        background: #e0e7ff;
+      }
+
+      /* ── Question list ── */
+      .q-list {
+        list-style: none;
+        background: var(--surface);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+      .q-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 11px 18px;
+        border-bottom: 1px solid var(--border);
+        transition: background 0.12s;
+      }
+      .q-item:last-child {
+        border-bottom: none;
+      }
+      .q-item:hover {
+        background: #fafbff;
+      }
+      .q-item.is-done {
+        background: var(--done-bg);
+      }
+      .q-item.is-done:hover {
+        background: #f1f5fb;
+      }
+
+      /* checkbox col */
+      .q-check {
+        flex-shrink: 0;
+        padding-top: 3px;
+      }
+      .q-check input[type="checkbox"] {
+        width: 17px;
+        height: 17px;
+        accent-color: var(--primary);
+        cursor: pointer;
+      }
+
+      /* info col */
+      .q-info {
+        flex: 1;
+        min-width: 0;
+      }
+      .q-title-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .q-link {
+        font-size: 0.93rem;
+        font-weight: 500;
+        color: var(--text);
+        text-decoration: none;
+        line-height: 1.4;
+      }
+      .q-link:hover {
+        color: var(--primary);
+      }
+      .is-done .q-link {
+        color: var(--muted);
+        text-decoration: line-through;
+        text-decoration-color: #bbb;
+      }
+      .diff {
+        font-size: 0.71rem;
+        font-weight: 700;
+        padding: 2px 7px;
+        border-radius: 5px;
+        flex-shrink: 0;
+        letter-spacing: 0.2px;
+      }
+      .diff.Easy {
+        background: var(--easy-bg);
+        color: var(--easy);
+      }
+      .diff.Med {
+        background: var(--med-bg);
+        color: var(--med);
+      }
+      .diff.Hard {
+        background: var(--hard-bg);
+        color: var(--hard);
+      }
+      .q-note-preview {
+        font-size: 0.78rem;
+        color: var(--muted);
+        margin-top: 3px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 520px;
+      }
+
+      /* star + note btns */
+      .q-actions {
+        display: flex;
+        align-items: flex-start;
+        gap: 2px;
+        flex-shrink: 0;
+        padding-top: 1px;
+      }
+      .star-btn,
+      .note-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        border-radius: 6px;
+        padding: 4px 6px;
+        transition: all 0.12s;
+        line-height: 1;
+      }
+      .star-btn {
+        color: #d1d5db;
+        font-size: 0.92rem;
+        font-weight: 700;
+      }
+      .star-btn:hover {
+        color: var(--star);
+        background: #fffbeb;
+      }
+      .star-btn.lit {
+        color: var(--star);
+      }
+      .note-btn {
+        color: #c0c8d8;
+        font-size: 1rem;
+      }
+      .note-btn:hover {
+        color: var(--primary);
+        background: var(--primary-lt);
+      }
+      .note-btn.has-note {
+        color: var(--primary);
+      }
+
+      /* ── Empty / loading ── */
+      .empty {
+        text-align: center;
+        padding: 52px 24px;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+      .empty .icon {
+        font-size: 2.4rem;
+        display: block;
+        margin-bottom: 12px;
+      }
+
+      /* ── Note modal ── */
+      .overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 20, 35, 0.45);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 999;
+        padding: 16px;
+      }
+      .modal {
+        background: #fff;
+        border-radius: 18px;
+        padding: 26px 28px;
+        width: 100%;
+        max-width: 560px;
+        box-shadow: 0 24px 64px rgba(0, 0, 0, 0.22);
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      .modal-head {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 10px;
+      }
+      .modal-title {
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1.4;
+      }
+      .modal-close {
+        background: #f1f5f9;
+        border: none;
+        border-radius: 7px;
+        width: 28px;
+        height: 28px;
+        cursor: pointer;
+        color: var(--muted);
+        font-size: 1rem;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .modal-close:hover {
+        background: #e2e8f0;
+        color: var(--text);
+      }
+      .modal-textarea {
+        width: 100%;
+        min-height: 150px;
+        font-size: 0.9rem;
+        font-family: inherit;
+        border: 1.5px solid var(--border);
+        border-radius: 10px;
+        padding: 12px 14px;
+        resize: vertical;
+        outline: none;
+        color: var(--text);
+        line-height: 1.65;
+      }
+      .modal-textarea:focus {
+        border-color: var(--primary);
+      }
+      .modal-foot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .save-hint {
+        font-size: 0.78rem;
+        color: var(--muted);
+      }
+      .save-hint.ok {
+        color: var(--easy);
+        font-weight: 600;
+      }
+      .btn-close-modal {
+        padding: 8px 22px;
+        border-radius: 8px;
+        background: var(--primary);
+        color: #fff;
+        border: none;
+        font-size: 0.88rem;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      .btn-close-modal:hover {
+        background: #4338ca;
+      }
+
+      @media (max-width: 600px) {
+        .page {
+          padding: 0 0 40px;
+        }
+        .header-card,
+        .controls-card,
+        .q-list {
+          border-radius: 0;
+        }
+        .q-note-preview {
+          max-width: 180px;
+        }
+        .controls-card {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .vsep {
+          display: none;
+        }
+        .btn-all-notes {
+          margin-left: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <!-- Header -->
+      <div class="header-card">
+        <div class="header-top">
+          <span class="header-title">LeetCode Dashboard</span>
+          <span class="header-stat"
+            ><strong id="hDone">0</strong> /
+            <span id="hTotal">0</span> done</span
+          >
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <div class="controls-card">
+        <span class="ctrl-label">Filter</span>
+        <div class="filter-pills">
+          <button class="pill active" onclick="setFilter(this,'')" data-f="">
+            All <span class="pill-count" id="c-all"></span>
+          </button>
+          <button
+            class="pill easy"
+            onclick="setFilter(this,'Easy')"
+            data-f="Easy"
+          >
+            Easy <span class="pill-count" id="c-easy"></span>
+          </button>
+          <button
+            class="pill med"
+            onclick="setFilter(this,'Med.')"
+            data-f="Med."
+          >
+            Med. <span class="pill-count" id="c-med"></span>
+          </button>
+          <button
+            class="pill hard"
+            onclick="setFilter(this,'Hard')"
+            data-f="Hard"
+          >
+            Hard <span class="pill-count" id="c-hard"></span>
+          </button>
+          <button
+            class="pill"
+            onclick="setFilter(this,'starred')"
+            data-f="starred"
+          >
+            ★ Starred <span class="pill-count" id="c-starred"></span>
+          </button>
+          <button
+            class="pill"
+            onclick="setFilter(this,'undone')"
+            data-f="undone"
+          >
+            Undone <span class="pill-count" id="c-undone"></span>
+          </button>
+          <button class="pill" onclick="setFilter(this,'noted')" data-f="noted">
+            Has Notes <span class="pill-count" id="c-noted"></span>
+          </button>
+        </div>
+
+        <div class="vsep"></div>
+
+        <span class="ctrl-label">Sort</span>
+        <select class="sort-select" id="sortSel" onchange="renderList()">
+          <option value="">Default</option>
+          <option value="starsD">Stars ↓</option>
+          <option value="starsA">Stars ↑</option>
+          <option value="diffE">Difficulty: Easy first</option>
+          <option value="diffH">Difficulty: Hard first</option>
+          <option value="undoneF">Undone first</option>
         </select>
-        <select id="starSort" onchange="renderQuestions()">
-          <option value="">Sort by Stars</option>
-          <option value="starsDesc">Stars ↓</option>
-          <option value="starsAsc">Stars ↑</option>
-        </select>
-        <button onclick="resetAll()" title="Reset all progress and notes">Reset All</button>
-        <a class="show-notes-btn" href="all_notes.html">All Notes</a>
+
+        <a class="btn-all-notes" href="all_notes.html">✏ All Notes</a>
+      </div>
+
+      <!-- List -->
+      <ul class="q-list" id="qList">
+        <li class="empty"><span class="icon">⏳</span>Loading questions…</li>
+      </ul>
+    </div>
+
+    <!-- Note modal -->
+    <div
+      class="overlay"
+      id="overlay"
+      style="display: none"
+      onclick="overlayClick(event)"
+    >
+      <div class="modal" onclick="event.stopPropagation()">
+        <div class="modal-head">
+          <div class="modal-title" id="mTitle"></div>
+          <button class="modal-close" onclick="closeModal()">✕</button>
+        </div>
+        <textarea
+          class="modal-textarea"
+          id="mText"
+          placeholder="Write your notes here…"
+          oninput="noteChanged()"
+        ></textarea>
+        <div class="modal-foot">
+          <span class="save-hint" id="mHint">Auto-saves as you type</span>
+          <button class="btn-close-modal" onclick="closeModal()">Done</button>
+        </div>
       </div>
     </div>
-    <div class="session-info">
-      Progress and notes saved in localStorage.
-    </div>
-    <ul class="question-list" id="questionList"></ul>
-    <div id="emptyMsg" class="empty-msg" style="display:none;">No questions found for this filter.</div>
-  </div>
 
-  <div class="notes-modal" id="notesModal" style="display:none;">
-    <div class="modal-content">
-      <h3 id="modalTitle"></h3>
-      <textarea id="noteInput" placeholder="Write your notes here..."></textarea>
-      <br>
-      <button onclick="saveNote()">Save</button>
-      <button onclick="closeNotesModal()">Cancel</button>
-    </div>
-  </div>
+    <script>
+      let questions = [];
+      let curFilter = "";
+      let curNoteIdx = -1;
+      let saveTimer = null;
 
-  <script>
-    let questions = [];
-    let currentNoteIdx = null;
+      /* ─── load / save ───────────────────────────────────────────────────── */
 
-    function loadState() {
-      return fetch('/state')
-        .then(res => res.ok ? res.json() : Promise.resolve({done: {}, notes: {}, stars: {}}))
-        .then(state => {
-          const { done, notes, stars } = state;
-          questions.forEach(q => {
-            q.done = !!done[q.link];
-            q.note = notes[q.title] || '';
-            q.stars = stars[q.link] || 0;
-          });
-        })
-        .catch(() => {
-          // Fallback to localStorage if server state fails
-          const done = JSON.parse(localStorage.getItem('doneQuestions') || '{}');
-          const notes = JSON.parse(localStorage.getItem('questionNotes') || '{}');
-          const stars = JSON.parse(localStorage.getItem('questionStars') || '{}');
-          questions.forEach(q => {
-            q.done = !!done[q.link];
-            q.note = notes[q.link] || '';
-            q.stars = stars[q.link] || 0;
-          });
+      function loadState() {
+        return fetch("/state")
+          .then((r) => (r.ok ? r.json() : { done: {}, notes: {}, stars: {} }))
+          .then(({ done, notes, stars }) => {
+            questions.forEach((q) => {
+              q.done = !!done[q.link];
+              q.note = notes[q.link] || "";
+              q.stars = stars[q.link] || 0;
+            });
+          })
+          .catch(() => {});
+      }
+
+      function persistState() {
+        const done = {},
+          notes = {},
+          stars = {};
+        questions.forEach((q) => {
+          if (q.done) done[q.link] = true;
+          if (q.note) notes[q.link] = q.note;
+          if (q.stars) stars[q.link] = q.stars;
         });
-    }
-
-    function saveState() {
-      const done = {};
-      const notes = {};
-      const stars = {};
-      questions.forEach(q => {
-        if (q.done) done[q.link] = true;
-        if (q.note) notes[q.title] = q.note;
-        if (q.stars) stars[q.link] = q.stars;
-      });
-      // Update server state
-      fetch('/state', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ done, notes, stars })
-      })
-      .catch(() => {
-        // Fallback to localStorage if server update fails
-        localStorage.setItem('doneQuestions', JSON.stringify(done));
-        localStorage.setItem('questionNotes', JSON.stringify(notes));
-        localStorage.setItem('questionStars', JSON.stringify(stars));
-      });
-    }
-
-    function renderQuestions() {
-      const list = document.getElementById('questionList');
-      const filter = document.getElementById('difficultyFilter').value;
-      list.innerHTML = '';
-      let filtered = questions;
-      if (filter) filtered = questions.filter(q => q.difficulty === filter);
-      // Sort by stars if selected
-      const sortBy = document.getElementById('starSort').value;
-      if (sortBy === 'starsDesc') {
-        filtered.sort((a, b) => b.stars - a.stars);
-      } else if (sortBy === 'starsAsc') {
-        filtered.sort((a, b) => a.stars - b.stars);
+        return fetch("/state", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ done, notes, stars }),
+        }).catch(() => {});
       }
-      filtered.forEach((q, i) => {
-        const li = document.createElement('li');
-        li.className = 'question' + (q.done ? ' done' : '');
-        li.innerHTML = `
-          <input type="checkbox" class="done-checkbox" ${q.done ? 'checked' : ''} onchange="toggleDone(${i})">
-          <div class="question-info">
-            <span class="question-title">
-              <a class="question-link" href="${q.link}" target="_blank">${q.title}</a>
-              <span class="difficulty ${q.difficulty.replace('.', '')}">${q.difficulty}</span>
-            </span>
+
+      /* ─── filter / sort ─────────────────────────────────────────────────── */
+
+      function setFilter(btn, f) {
+        document
+          .querySelectorAll(".pill")
+          .forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        curFilter = f;
+        renderList();
+      }
+
+      function getFiltered() {
+        let list = [...questions];
+        if (
+          curFilter === "Easy" ||
+          curFilter === "Med." ||
+          curFilter === "Hard"
+        )
+          list = list.filter((q) => q.difficulty === curFilter);
+        else if (curFilter === "starred")
+          list = list.filter((q) => q.stars > 0);
+        else if (curFilter === "undone") list = list.filter((q) => !q.done);
+        else if (curFilter === "noted") list = list.filter((q) => q.note);
+
+        const sort = document.getElementById("sortSel").value;
+        const dmap = { Easy: 1, "Med.": 2, Hard: 3 };
+        if (sort === "starsD") list.sort((a, b) => b.stars - a.stars);
+        else if (sort === "starsA") list.sort((a, b) => a.stars - b.stars);
+        else if (sort === "diffE")
+          list.sort((a, b) => dmap[a.difficulty] - dmap[b.difficulty]);
+        else if (sort === "diffH")
+          list.sort((a, b) => dmap[b.difficulty] - dmap[a.difficulty]);
+        else if (sort === "undoneF")
+          list.sort((a, b) => (a.done ? 1 : 0) - (b.done ? 1 : 0));
+
+        return list;
+      }
+
+      /* ─── counts ────────────────────────────────────────────────────────── */
+
+      function updateCounts() {
+        const qs = questions;
+        const done = qs.filter((q) => q.done);
+        const total = qs.length;
+        const pct = total ? ((done.length / total) * 100).toFixed(1) : 0;
+
+        document.getElementById("hDone").textContent = done.length;
+        document.getElementById("hTotal").textContent = total;
+        document.getElementById("progressFill").style.width = pct + "%";
+
+        const byDiff = (d) => qs.filter((q) => q.difficulty === d);
+        const doneIn = (d) => byDiff(d).filter((q) => q.done).length;
+
+        const fmt = (d, t) => `${d}/${t}`;
+        document.getElementById("c-all").textContent = fmt(done.length, total);
+        document.getElementById("c-easy").textContent = fmt(
+          doneIn("Easy"),
+          byDiff("Easy").length
+        );
+        document.getElementById("c-med").textContent = fmt(
+          doneIn("Med."),
+          byDiff("Med.").length
+        );
+        document.getElementById("c-hard").textContent = fmt(
+          doneIn("Hard"),
+          byDiff("Hard").length
+        );
+        document.getElementById("c-starred").textContent = qs.filter(
+          (q) => q.stars > 0
+        ).length;
+        document.getElementById("c-undone").textContent = qs.filter(
+          (q) => !q.done
+        ).length;
+        document.getElementById("c-noted").textContent = qs.filter(
+          (q) => q.note
+        ).length;
+      }
+
+      /* ─── render ─────────────────────────────────────────────────────────── */
+
+      function starLabel(n) {
+        if (n === 0) return '<span style="opacity:0.35">☆</span>';
+        return "★".repeat(n);
+      }
+
+      function renderList() {
+        updateCounts();
+        const ul = document.getElementById("qList");
+        const list = getFiltered();
+
+        if (!list.length) {
+          ul.innerHTML = `<li class="empty"><span class="icon">🔍</span>No questions match this filter.</li>`;
+          return;
+        }
+
+        const frag = document.createDocumentFragment();
+        list.forEach((q) => {
+          const idx = questions.indexOf(q);
+          const diffClass = q.difficulty.replace(".", "");
+          const preview = q.note ? q.note.split("\n")[0] : "";
+          const stars = q.stars || 0;
+
+          const li = document.createElement("li");
+          li.className = "q-item" + (q.done ? " is-done" : "");
+
+          // safe text via textContent after creation
+          li.innerHTML = `
+        <div class="q-check">
+          <input type="checkbox" class="done-cb" data-idx="${idx}"${
+            q.done ? " checked" : ""
+          }>
+        </div>
+        <div class="q-info">
+          <div class="q-title-row">
+            <a class="q-link" data-href="${idx}" href="" target="_blank"></a>
+            <span class="diff ${diffClass}"></span>
           </div>
-          <button class="star-btn" onclick="toggleStar(${i})">★ ${q.stars}</button>
-          <button class="note-btn${q.note ? ' active' : ''}" onclick="openNotesModal(${i})">&#9998;</button>
-        `;
-        list.appendChild(li);
-      });
-      document.getElementById('emptyMsg').style.display = filtered.length ? 'none' : 'block';
-    }
+          ${preview ? `<div class="q-note-preview"></div>` : ""}
+        </div>
+        <div class="q-actions">
+          <button class="star-btn${
+            stars ? " lit" : ""
+          }" data-idx="${idx}" title="Stars: ${stars}. Click to cycle (0–3).">${starLabel(
+            stars
+          )}</button>
+          <button class="note-btn${
+            q.note ? " has-note" : ""
+          }" data-idx="${idx}" title="${
+            q.note ? "Edit note" : "Add note"
+          }">✏</button>
+        </div>`;
 
-    function toggleDone(idx) {
-      questions[idx].done = !questions[idx].done;
-      renderQuestions();
-      saveState();
-    }
+          // set text safely
+          li.querySelector(".q-link").textContent = q.title;
+          li.querySelector(".q-link").href = q.link;
+          li.querySelector(".diff").textContent = q.difficulty;
+          if (preview)
+            li.querySelector(".q-note-preview").textContent = preview;
 
-    function openNotesModal(idx) {
-      currentNoteIdx = idx;
-      document.getElementById('modalTitle').textContent = questions[idx].title;
-      document.getElementById('noteInput').value = questions[idx].note || '';
-      document.getElementById('notesModal').style.display = 'flex';
-    }
-
-    function closeNotesModal() {
-      document.getElementById('notesModal').style.display = 'none';
-    }
-
-    function saveNote() {
-      const note = document.getElementById('noteInput').value.trim();
-      questions[currentNoteIdx].note = note;
-      closeNotesModal();
-      renderQuestions();
-      saveState();
-    }
-
-    function toggleStar(idx) {
-      questions[idx].stars = (questions[idx].stars || 0) + 1;
-      renderQuestions();
-      saveState();
-    }
-
-    function resetAll() {
-      if (confirm("Reset all progress? Notes and stars remain.")) {
-        questions.forEach(q => q.done = false);
-        renderQuestions();
-        saveState();
+          frag.appendChild(li);
+        });
+        ul.innerHTML = "";
+        ul.appendChild(frag);
       }
-    }
 
-    function init() {
-      fetch('leetcode_questions.json')
-        .then(res => res.ok ? res.json() : Promise.reject())
-        .then(data => {
+      /* ─── actions ────────────────────────────────────────────────────────── */
+
+      document.getElementById("qList").addEventListener("change", (e) => {
+        const cb = e.target.closest(".done-cb");
+        if (!cb) return;
+        const idx = +cb.dataset.idx;
+        questions[idx].done = cb.checked;
+        renderList();
+        persistState();
+      });
+
+      document.getElementById("qList").addEventListener("click", (e) => {
+        // star
+        const sb = e.target.closest(".star-btn");
+        if (sb) {
+          const idx = +sb.dataset.idx;
+          questions[idx].stars = ((questions[idx].stars || 0) + 1) % 4;
+          renderList();
+          persistState();
+          return;
+        }
+        // note
+        const nb = e.target.closest(".note-btn");
+        if (nb) {
+          openModal(+nb.dataset.idx);
+        }
+      });
+
+      /* ─── note modal ─────────────────────────────────────────────────────── */
+
+      function openModal(idx) {
+        curNoteIdx = idx;
+        const q = questions[idx];
+        document.getElementById("mTitle").textContent = q.title;
+        document.getElementById("mText").value = q.note || "";
+        setHint("Auto-saves as you type", false);
+        document.getElementById("overlay").style.display = "flex";
+        setTimeout(() => document.getElementById("mText").focus(), 40);
+      }
+
+      function closeModal() {
+        flushNoteSave();
+        document.getElementById("overlay").style.display = "none";
+        curNoteIdx = -1;
+      }
+
+      function overlayClick(e) {
+        if (e.target === document.getElementById("overlay")) closeModal();
+      }
+
+      function noteChanged() {
+        setHint("Saving…", false);
+        clearTimeout(saveTimer);
+        saveTimer = setTimeout(flushNoteSave, 650);
+      }
+
+      function flushNoteSave() {
+        clearTimeout(saveTimer);
+        saveTimer = null;
+        if (curNoteIdx === -1) return;
+        questions[curNoteIdx].note = document.getElementById("mText").value;
+        persistState().then(() => {
+          setHint("Saved ✓", true);
+          renderList();
+        });
+      }
+
+      function setHint(msg, ok) {
+        const el = document.getElementById("mHint");
+        if (!el) return;
+        el.textContent = msg;
+        el.className = "save-hint" + (ok ? " ok" : "");
+      }
+
+      // close modal on Escape
+      document.addEventListener("keydown", (e) => {
+        if (
+          e.key === "Escape" &&
+          document.getElementById("overlay").style.display !== "none"
+        )
+          closeModal();
+      });
+
+      /* ─── init ───────────────────────────────────────────────────────────── */
+
+      fetch("leetcode_questions.json")
+        .then((r) => (r.ok ? r.json() : Promise.reject()))
+        .then((data) => {
           questions = data;
           return loadState();
         })
-        .then(() => {
-          renderQuestions();
-        })
+        .then(() => renderList())
         .catch(() => {
-          document.getElementById('questionList').innerHTML = '';
-          document.getElementById('emptyMsg').style.display = 'block';
-          document.getElementById('emptyMsg').textContent =
-            "Could not load questions. Serve via a local HTTP server.";
+          document.getElementById(
+            "qList"
+          ).innerHTML = `<li class="empty"><span class="icon">⚠️</span>Could not load questions. Start the server with <code>node server.js</code>.</li>`;
         });
-    }
-
-    window.toggleDone = toggleDone;
-    window.openNotesModal = openNotesModal;
-    window.closeNotesModal = closeNotesModal;
-    window.saveNote = saveNote;
-    window.toggleStar = toggleStar;
-    window.resetAll = resetAll;
-
-    init();
-  </script>
-</body>
+    </script>
+  </body>
 </html>
