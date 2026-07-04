@@ -1,0 +1,288 @@
+← Back to Dashboard
+All Notes
+13. Roman to Integer Easy
+When scanning from right to left, you've already seen the symbol to the right
+- If the current value is smaller than the previous value, it must be part of a subtractive pair (like IV, IX, XL), so subtract it.
+- Otherwise, add it.
+26. Remove Duplicates from Sorted Array Easy
+You need to copy the first occurrence of each distinct value, not the last one
+31. Next Permutation Med.
+The key is to make the smallest possible increase to the current permutation.
+- Find the dip
+- Swap with next greater from right
+- Reverse the suffix.
+42. Trapping Rain Water Hard
+Smaller max decides. Update max → collect water → move pointer.
+50. Pow(x, n) Med.
+- x always stores the current power of 2 (x¹, x², x⁴, x⁸, ...).
+- Odd (n % 2 == 1) means "take this power", so do ans *= x.
+- Then square x (next power) and halve n (move to the next binary bit).
+75. Sort Colors Med.
+Use mid to track current element
+- Swap with l (0) → incoming element is already processed (1) → ✅ mid++
+- Swap with r (2) → incoming element is unknown → ❌ don't mid++
+128. Longest Consecutive Sequence Med.
+Only start from numbers with no predecessor (num - 1 absent)
+- Keep moving forward while num + 1 exists
+146. LRU Cache Med.
+Map finds, DLL orders. Every access goes to MRU. Evict from LRU.
+- Access → Move Right
+- Overflow → Remove Left
+
+HashMap → Find any node in O(1)
+DLL → Maintain usage order in O(1)
+
+LRU <-> ... <-> ... <-> MRU
+^
+left right
+206. Reverse Linked List Easy
+During the iterative reversal, the list is temporarily split into two parts
+- The already reversed part
+- The remaining unreversed part
+
+The curr pointer is always the boundary between them
+560. Subarray Sum Equals K Med.
+A subarray is a contiguous non-empty sequence of elements within an array
+
+Store all previous prefix sums. At each position
+- What previous prefix would make the current subarray satisfy the condition?
+- Then add the current prefix to the map
+
+- Prefix Sum + HashMap pattern
+54. Spiral Matrix Med.
+Walk the perimeter, then shrink the perimeter
+
+Treat the matrix as shrinking rectangles.
+After traversing one edge, move that boundary inward.
+
+Repeat while a rectangle still exists:
+
+- Traverse left → right on top
+top += 1
+- Traverse top → bottom on right
+right -= 1
+-Traverse right → left on bottom
+bottom -= 1
+- Traverse bottom → top on left
+left += 1
+84. Largest Rectangle in Histogram Hard
+Monotonic Increasing Stack
+
+Bar stays on the stack until a shorter bar ends its expansion.
+- maintain [start, height] on stack
+
+Pop while stack top is taller than current
+- When popped, compute its largest rectangle.
+- The new shorter bar inherits the earliest starting index of the popped bars
+136. Single Number Easy
+XOR cancels pairs, so only the unpaired number survives
+207. Course Schedule Med.
+Use list for indegree - [0] * numCourses
+
+- Dict() Indegree only contains courses that appear as a destination.
+- Courses with 0 prerequisites are not in the dictionary, so they never get added to the queue.
+253. Meeting Rooms II Med.
+Heap stores meeting end times.
+Earliest ending room gets reused first - pop comparing with new start time
+Heap size = Rooms in use - maintain max
+322. Coin Change Med.
+At every amount, "pick a coin" and solve the remaining amount
+Memoize each remaining amount once
+Transition: dfs(rem) = 1 + min(dfs(rem - coin))
+380. Insert Delete GetRandom O(1) Med.
+List (values) → Random access
+Dict (value: index) → Find index in list
+Delete = Swap with last with value → Pop value → Update index of swapped
+410. Split Array Largest Sum Hard
+Search on the maximum allowed subarray sum
+Greedily create a new partition only when forced
+
+- Need ≤ k partitions? → Try a smaller limit
+- Need > k partitions? → Increase the limit
+10. Regular Expression Matching Hard
+* → Either skip it or use it (stay on the same pattern)
+- skip helper(i, j + 2)
+- use helper(i + 1, j)
+
+No * → Match & move both
+- helper(i + 1, j + 1)
+162. Find Peak Element Med.
+Compare only mid and mid + 1.
+< → Uphill → Peak is on the right.
+> → Downhill → Peak is on the left (including mid).
+When l == r, you've found a peak.
+231. Power of Two Easy
+Positive only (n > 0).
+Exactly one 1 bit → Power of 2.
+Python right-shifting negatives never reaches 0.
+73. Set Matrix Zeroes Med.
+Use the first row as column markers.
+Use the first column as row markers.
+Store whether the first row and first column originally contained a 0 (using two booleans), since they are overwritten while marking.
+72. Edit Distance Med.
+Base: One string ends → Insert/Delete the remaining characters
+
+Match → Move both
+Mismatch → min(Insert, Delete, Replace)
+79. Word Search Med.
+1. Out of bounds / visited / mismatch → False
+2. Last character matched → True
+3. Mark visited
+4. Try all 4 directions
+5. Unmark visited
+6. Return result
+
+
+Note: Never return while you're still "holding" a choice
+Never return immediately after visited.add()—always unchoose before returning.
+347. Top K Frequent Elements Med.
+Using Heap - O(nlogn) time
+
+Using Bucket - O(n) time
+- Count
+- Frequency is the Bucket Index
+- Scan Buckets Backwards
+44. Wildcard Matching Hard
+Normal match / ? → Match one character → Move both pointers
+
+* Two choices:
+- Skip it → (i, j + 1)
+- Consume one character → (i + 1, j) (stay on *)
+131. Palindrome Partitioning Med.
+Try every cut recursively - backtrack
+- but only cut if the left piece is a palindrome
+103. Binary Tree Zigzag Level Order Traversal Med.
+BFS Level Order + Flip Direction Every Level
+- keep flipping a flag
+- start with - leftToRight = True
+- False - append reverse of level order
+1944. Number of Visible People in a Queue Hard
+Monotonic decreasing stack - in reverse order
+
+- Pop all shorter compared to current
+- Count them
+- Count first taller - can see first taller not further taller
+- Push yourself
+778. Swim in Rising Water Hard
+Algo
+- Min Heap
+- State = Max Height So Far
+- Pop Minimum
+- 4 Directions
+- newTime = max(curr, nextHeight)
+- Visited
+- First Reach End = Answer
+
+Pattern → Dijkstra
+- Grid
+- Minimum Maximum
+- Earliest Time
+1094. Car Pooling Med.
+Using MinHeap
+- Sort by Pickup
+- Heap = Earliest end [end, numPassenger]
+- Drop First, increase capacity
+- Pick Next, decrease capacity
+- Capacity < 0 → False
+
+Using Event Model
+- Maintain People in Car - on a number line
+- Pickup = + numPassenger
+- Drop = - numPassenger
+- Overflow -> False
+287. Find the Duplicate Number Med.
+Array → Linked List
+Duplicate → Cycle
+
+- Cycle
+- Slow 1, Fast 2 → Meet
+
+- Meet point
+- One @ Start
+- One @ Meet
+- Walk Together
+- Meet = Duplicate
+45. Jump Game II Med.
+Jump Windows
+- Current window = everything I can reach with this jump.
+- Scan the window and find the farthest reach.
+- That farthest becomes the next window.
+- Each new window costs exactly one jump.
+1101. The Earliest Moment When Everyone Become Friends Med.
+Using DSU
+
+- Every node starts as its own component.
+- Find follows parents until the group component.
+- Union joins the smaller component under the larger component.
+- Reduce the component size after every merge.
+- Stop when only one component remains.
+34. Find First and Last Position of Element in Sorted Array Med.
+Binary search left - right bound.
+
+For the first position, keep moving left whenever the target is possible.
+For the last position, keep moving right whenever the target is possible.
+After the search, l is the first answer, and r is the last answer.
+39. Combination Sum Med.
+Notice:
+- Take → same index (reuse allowed).
+- Skip → next index.
+444. Sequence Reconstruction Med.
+Topological Sort
+- build indegree dictionary separately
+- update the indegree while building graph
+
+For this Problem
+- Every number must appear in the sub-sequence
+- if length of indegree != lenght of super-sequence - some number not appeared in the graph
+- Only one node can have zero indegree at a time
+- queue can have max one element when popping - more elements mean more path (ambiguous)
+- Match the node with order given
+1838. Frequency of the Most Frequent Element Med.
+Sort in ascending order
+Use sliding window l, r = 0, 0
+
+- Rightmost value is the target
+- Valid: nums[r] * (r - l + 1) - total < k
+
+- Keep the sum of the current window
+- Check if the cost exceeds k
+- Shrink until the window becomes affordable
+- The largest valid window is the answer.
+743. Network Delay Time Med.
+Push = Candidate
+Pop = Confirm
+
+Visited after Pop
+Heap decides shortest
+First Pop = Minimum Distance (final)
+46. Permutations Med.
+Using used set
+- Choose
+- Mark
+- Recurse
+- Pop
+- Unmark
+32. Longest Valid Parentheses Hard
+Stack have Indices, not brackets
+-1 = Left Boundary
+( → Push
+) → Pop
+Empty → Reset Boundary (push i)
+Else → (i - Top) → Max Length
+179. Largest Number Med.
+Use string comparision to get [9, 10] - 910 > 109
+
+- Compare ab vs ba
+- Bigger concat wins
+- Custom sort
+- Join
+
+Sort Func: strs.sort(key = cmp_to_key(compare))
+329. Longest Increasing Path in a Matrix Hard
+DFS from every cell → Go only uphill → Memoize the answer
+
+Pattern
+- Grid
+- Longest/maximum path
+- Overlapping subproblems
+- No cycles because movement is strictly increasing

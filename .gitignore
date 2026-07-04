@@ -4,9 +4,6 @@ node_modules/
 # Environment files
 .env
 
-# Persisted state file
-question_state.json
-
 # IDE files
 .vscode/
 *.log

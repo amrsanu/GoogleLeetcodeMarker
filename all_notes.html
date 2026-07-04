@@ -38,13 +38,12 @@
     let questions = [];
     function loadQuestions() {
       fetch('leetcode_questions.json')
-        .then(res => {
-          if (!res.ok) throw new Error('Network response was not ok');
-          return res.json();
-        })
+        .then(res => res.ok ? res.json() : Promise.reject())
         .then(data => {
           questions = data;
-          loadState();
+          return loadState();
+        })
+        .then(() => {
           renderNotes();
         })
         .catch(() => {
@@ -55,10 +54,20 @@
         });
     }
     function loadState() {
-      const notes = JSON.parse(localStorage.getItem('questionNotes') || '{}');
-      questions.forEach(q => {
-        q.note = notes[q.link] || '';
-      });
+      return fetch('/state')
+        .then(res => res.ok ? res.json() : Promise.resolve({ notes: {} }))
+        .then(state => {
+          const notes = state.notes || {};
+          questions.forEach(q => {
+            q.note = notes[q.link] || '';
+          });
+        })
+        .catch(() => {
+          const notes = JSON.parse(localStorage.getItem('questionNotes') || '{}');
+          questions.forEach(q => {
+            q.note = notes[q.link] || '';
+          });
+        });
     }
     function renderNotes() {
       const notesList = document.getElementById('allNotesList');

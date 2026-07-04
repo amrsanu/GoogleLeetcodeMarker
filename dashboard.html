@@ -88,14 +88,27 @@
     let currentNoteIdx = null;
 
     function loadState() {
-      const done = JSON.parse(localStorage.getItem('doneQuestions') || '{}');
-      const notes = JSON.parse(localStorage.getItem('questionNotes') || '{}');
-      const stars = JSON.parse(localStorage.getItem('questionStars') || '{}');
-      questions.forEach(q => {
-        q.done = !!done[q.link];
-        q.note = notes[q.link] || '';
-        q.stars = stars[q.link] || 0;
-      });
+      return fetch('/state')
+        .then(res => res.ok ? res.json() : Promise.resolve({done: {}, notes: {}, stars: {}}))
+        .then(state => {
+          const { done, notes, stars } = state;
+          questions.forEach(q => {
+            q.done = !!done[q.link];
+            q.note = notes[q.title] || '';
+            q.stars = stars[q.link] || 0;
+          });
+        })
+        .catch(() => {
+          // Fallback to localStorage if server state fails
+          const done = JSON.parse(localStorage.getItem('doneQuestions') || '{}');
+          const notes = JSON.parse(localStorage.getItem('questionNotes') || '{}');
+          const stars = JSON.parse(localStorage.getItem('questionStars') || '{}');
+          questions.forEach(q => {
+            q.done = !!done[q.link];
+            q.note = notes[q.link] || '';
+            q.stars = stars[q.link] || 0;
+          });
+        });
     }
 
     function saveState() {
@@ -104,12 +117,21 @@
       const stars = {};
       questions.forEach(q => {
         if (q.done) done[q.link] = true;
-        if (q.note) notes[q.link] = q.note;
+        if (q.note) notes[q.title] = q.note;
         if (q.stars) stars[q.link] = q.stars;
       });
-      localStorage.setItem('doneQuestions', JSON.stringify(done));
-      localStorage.setItem('questionNotes', JSON.stringify(notes));
-      localStorage.setItem('questionStars', JSON.stringify(stars));
+      // Update server state
+      fetch('/state', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ done, notes, stars })
+      })
+      .catch(() => {
+        // Fallback to localStorage if server update fails
+        localStorage.setItem('doneQuestions', JSON.stringify(done));
+        localStorage.setItem('questionNotes', JSON.stringify(notes));
+        localStorage.setItem('questionStars', JSON.stringify(stars));
+      });
     }
 
     function renderQuestions() {
@@ -188,7 +210,9 @@
         .then(res => res.ok ? res.json() : Promise.reject())
         .then(data => {
           questions = data;
-          loadState();
+          return loadState();
+        })
+        .then(() => {
           renderQuestions();
         })
         .catch(() => {
