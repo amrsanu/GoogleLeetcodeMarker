@@ -57,6 +57,11 @@
           <option value="Medium">Medium</option>
           <option value="Hard">Hard</option>
         </select>
+        <select id="starSort" onchange="renderQuestions()">
+          <option value="">Sort by Stars</option>
+          <option value="starsDesc">Stars ↓</option>
+          <option value="starsAsc">Stars ↑</option>
+        </select>
         <button onclick="resetAll()" title="Reset all progress and notes">Reset All</button>
         <a class="show-notes-btn" href="all_notes.html">All Notes</a>
       </div>
@@ -113,6 +118,13 @@
       list.innerHTML = '';
       let filtered = questions;
       if (filter) filtered = questions.filter(q => q.difficulty === filter);
+      // Sort by stars if selected
+      const sortBy = document.getElementById('starSort').value;
+      if (sortBy === 'starsDesc') {
+        filtered.sort((a, b) => b.stars - a.stars);
+      } else if (sortBy === 'starsAsc') {
+        filtered.sort((a, b) => a.stars - b.stars);
+      }
       filtered.forEach((q, i) => {
         const li = document.createElement('li');
         li.className = 'question' + (q.done ? ' done' : '');
