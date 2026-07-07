@@ -321,6 +321,8 @@
         <a class="back-btn" href="dashboard.html">← Dashboard</a>
         <div class="topbar-right">
           <span class="note-count"><strong id="visCount">0</strong> notes</span>
+          <button class="pill" onclick="expandAll()">Expand All</button>
+          <button class="pill" onclick="collapseAll()">Collapse All</button>
         </div>
       </div>
 
@@ -490,8 +492,8 @@
           <div class="note-text">${hl(q.note, curSearch)}</div>
         </div>`;
 
-          // open first card by default, rest collapsed
-          if (i === 0) card.classList.add("open");
+          // open all cards by default
+          card.classList.add("open");
 
           card.querySelector(".note-header").addEventListener("click", () => {
             card.classList.toggle("open");
@@ -500,6 +502,13 @@
           container.appendChild(card);
         });
       }
+    // expand/collapse all notes
+    function expandAll() {
+      document.querySelectorAll('.note-card').forEach((c) => c.classList.add('open'));
+    }
+    function collapseAll() {
+      document.querySelectorAll('.note-card').forEach((c) => c.classList.remove('open'));
+    }
 
       /* ─── init ── */
       fetch("leetcode_questions.json")
